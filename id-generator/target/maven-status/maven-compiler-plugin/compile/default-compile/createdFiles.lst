@@ -1,0 +1,11 @@
+top\homesoft\framework\idgenerator\configuration\RedisProperties.class
+top\homesoft\framework\idgenerator\configuration\UidGeneratorProperties.class
+top\homesoft\framework\idgenerator\support\RedisMachineIdProvider.class
+top\homesoft\framework\idgenerator\configuration\RedisProperties$Pool.class
+top\homesoft\framework\idgenerator\configuration\UidGeneratorAutoConfigure.class
+top\homesoft\framework\idgenerator\IDGenServiceApplication.class
+top\homesoft\framework\idgenerator\configuration\UidGeneratorProperties$StrategyEnum.class
+top\homesoft\framework\idgenerator\configuration\RedisProperties$Lettuce.class
+top\homesoft\framework\idgenerator\utils\InnerIpAddressUtils.class
+top\homesoft\framework\idgenerator\support\MachineIdProvider.class
+META-INF\spring-configuration-metadata.json

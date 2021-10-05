@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/framework/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/framework/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/geek/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/homesoft-framework-tools/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/homesoft-swagger/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/id-generator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/id-generator/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-bus/spring-cloud-bus-listener/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-bus/spring-cloud-bus-listener/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-bus/spring-cloud-bus-publisher/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springcloud-bus/spring-cloud-bus-publisher/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/syndata/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/syndata/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

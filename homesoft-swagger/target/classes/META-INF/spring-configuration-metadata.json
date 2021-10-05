@@ -1,0 +1,123 @@
+{
+  "groups": [
+    {
+      "name": "swagger",
+      "type": "top.homesoft.framework.swagger.SwaggerProperties",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.authorization",
+      "type": "top.homesoft.framework.swagger.SwaggerProperties$Authorization",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.contact",
+      "type": "top.homesoft.framework.swagger.SwaggerProperties$Contact",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "swagger.authorization.auth-regex",
+      "type": "java.lang.String",
+      "description": "需要开启鉴权URL的正则",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties$Authorization"
+    },
+    {
+      "name": "swagger.authorization.authorization-scope-list",
+      "type": "java.util.List<top.homesoft.framework.swagger.SwaggerProperties$AuthorizationScope>",
+      "description": "鉴权作用域列表",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties$Authorization"
+    },
+    {
+      "name": "swagger.authorization.name",
+      "type": "java.lang.String",
+      "description": "鉴权策略ID，需要和SecurityReferences ID保持一致",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties$Authorization"
+    },
+    {
+      "name": "swagger.authorization.token-url-list",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties$Authorization"
+    },
+    {
+      "name": "swagger.base-packages",
+      "type": "java.util.List<java.lang.String>",
+      "description": "swagger会解析的包路径",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.base-path",
+      "type": "java.util.List<java.lang.String>",
+      "description": "swagger会解析的url规则",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.contact.email",
+      "type": "java.lang.String",
+      "description": "联系人email",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties$Contact"
+    },
+    {
+      "name": "swagger.contact.name",
+      "type": "java.lang.String",
+      "description": "联系人",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties$Contact"
+    },
+    {
+      "name": "swagger.contact.url",
+      "type": "java.lang.String",
+      "description": "联系人url",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties$Contact"
+    },
+    {
+      "name": "swagger.description",
+      "type": "java.lang.String",
+      "description": "描述",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.exclude-path",
+      "type": "java.util.List<java.lang.String>",
+      "description": "在basePath基础上需要排除的url规则",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.host",
+      "type": "java.lang.String",
+      "description": "host信息",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.license",
+      "type": "java.lang.String",
+      "description": "许可证",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.license-url",
+      "type": "java.lang.String",
+      "description": "许可证URL",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.terms-of-service-url",
+      "type": "java.lang.String",
+      "description": "服务条款URL",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.title",
+      "type": "java.lang.String",
+      "description": "标题",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    },
+    {
+      "name": "swagger.version",
+      "type": "java.lang.String",
+      "description": "版本",
+      "sourceType": "top.homesoft.framework.swagger.SwaggerProperties"
+    }
+  ],
+  "hints": []
+}

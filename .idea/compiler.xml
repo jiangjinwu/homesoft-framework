@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="spring-cloud-bus-listener" />
+        <module name="spring-cloud-bus-publisher" />
+        <module name="framework" />
+        <module name="geek" />
+        <module name="syndata" />
+        <module name="id-generator" />
+        <module name="homesoft-framework-tools" />
+        <module name="homesoft-swagger" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="framework" options="-parameters" />
+      <module name="geek" options="-parameters" />
+      <module name="homesoft-framework-tools" options="-parameters" />
+      <module name="homesoft-swagger" options="-parameters" />
+      <module name="id-generator" options="-parameters" />
+      <module name="spring-cloud-bus-listener" options="-parameters" />
+      <module name="spring-cloud-bus-publisher" options="-parameters" />
+      <module name="springcloud-bus" options="" />
+      <module name="syndata" options="-parameters" />
+    </option>
+  </component>
+</project>

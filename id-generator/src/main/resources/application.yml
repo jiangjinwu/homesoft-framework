@@ -1,0 +1,4 @@
+uid:
+  generator:
+    config:
+      strategy: redis

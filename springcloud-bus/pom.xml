@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>homesoft-framework</artifactId>
+        <groupId>top.homesoft</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>top.homesoft</groupId>
+    <artifactId>springcloud-bus</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>spring-cloud-bus-publisher</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <alibaba.nacos.version>2.0.2</alibaba.nacos.version>
+
+            <java.version>1.8</java.version>
+            <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+            <redisson.version>3.14.0</redisson.version>
+            <framework.version>1.0.1-SNAPSHOT</framework.version>
+            <jackson.version>2.11.1</jackson.version>
+            <hutool.version>4.6.3</hutool.version>
+            <mybatis-plus.version>3.4.1</mybatis-plus.version>
+            <mybatis-spring.version>2.1.4</mybatis-spring.version>
+            <fastjson.version>1.2.76</fastjson.version>
+            <druid.version>1.2.4</druid.version>
+            <springfox.version>3.0.0</springfox.version>
+            <swagger.version>1.5.20</swagger.version>
+
+            <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+            <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
+<!--            <spring-boot.version>2.3.2.RELEASE</spring-boot.version>-->
+            <spring-statemachine.version>2.2.1.RELEASE</spring-statemachine.version>
+
+    </properties>
+
+    <dependencies>
+        <!--这个jar放在第一个位置-->
+<!--        <dependency>-->
+<!--            <groupId>com.jubaozan.c3</groupId>-->
+<!--            <artifactId>framework-service</artifactId>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                        <groupId>org.springframework.cloud</groupId>-->
+<!--                        <artifactId>spring-cloud-starter-consul-discovery</artifactId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.springframework.cloud</groupId>-->
+<!--                    <artifactId>spring-cloud-starter-consul-config</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
+
+        <!--这个jar放在第二个位置-->
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.retry</groupId>
+                <artifactId>spring-retry</artifactId>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>6.2.0.Final</version>
+            </dependency>
+            <dependency>
+                <groupId>net.dreamlu</groupId>
+                <artifactId>mica-auto</artifactId>
+                <version>${mica.auto.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+            <version>2.0.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>top.homesoft</groupId>
+            <artifactId>id-generator</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>top.homesoft</groupId>
+            <artifactId>homesoft-swagger</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>top.homesoft</groupId>
+            <artifactId>homesoft-framework-core</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+</project>
