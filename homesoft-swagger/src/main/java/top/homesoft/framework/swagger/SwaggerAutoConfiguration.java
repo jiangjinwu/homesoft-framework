@@ -16,10 +16,11 @@
 package top.homesoft.framework.swagger;
 
 
-import com.github.xiaoymin.knife4j.spring.extension.OpenApiExtensionResolver;
+
+
 import com.google.common.collect.Lists;
 import lombok.AllArgsConstructor;
-import org.springblade.core.launch.props.BladeProperties;
+
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -57,12 +58,12 @@ public class SwaggerAutoConfiguration {
 	/**
 	 * 引入Knife4j扩展类
 	 */
-	private final OpenApiExtensionResolver openApiExtensionResolver;
-
-	/**
-	 * 引入Blade环境变量
-	 */
-	private final BladeProperties bladeProperties;
+//	private final OpenApiExtensionResolver openApiExtensionResolver;
+//
+//	/**
+//	 * 引入Blade环境变量
+//	 */
+//	private final BladeProperties bladeProperties;
 
 	@Bean
 	@ConditionalOnMissingBean
@@ -93,8 +94,8 @@ public class SwaggerAutoConfiguration {
 			.securitySchemes(Collections.singletonList(securitySchema(swaggerProperties)))
 			.securityContexts(Collections.singletonList(securityContext(swaggerProperties)))
 			.securityContexts(Lists.newArrayList(securityContext(swaggerProperties)))
-			.securitySchemes(Collections.singletonList(securitySchema(swaggerProperties)))
-			.extensions(openApiExtensionResolver.buildExtensions(bladeProperties.getName()));
+			.securitySchemes(Collections.singletonList(securitySchema(swaggerProperties)));
+//			.extensions(openApiExtensionResolver.buildExtensions(bladeProperties.getName()));
 	}
 
 	/**

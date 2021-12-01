@@ -17,10 +17,11 @@ package top.homesoft.framework.swagger;
 
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
+import com.google.common.base.Predicate;
 import springfox.documentation.RequestHandler;
 
 import java.util.List;
-import java.util.function.Predicate;
+
 
 /**
  * Swagger工具类

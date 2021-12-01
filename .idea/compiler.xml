@@ -7,22 +7,45 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-cloud-bus-listener" />
         <module name="spring-cloud-bus-publisher" />
-        <module name="framework" />
-        <module name="geek" />
-        <module name="syndata" />
-        <module name="id-generator" />
+        <module name="explore" />
+        <module name="homesoft-framework-rabbit" />
         <module name="homesoft-framework-tools" />
+        <module name="homesoft-framework-zipkin" />
+        <module name="homesoft-framework-core" />
+        <module name="homesoft-framework-log" />
+        <module name="spring-cloud-bus-listener" />
+        <module name="homesoft-demo-cloud-bus" />
+        <module name="geek" />
+        <module name="id-generator" />
+        <module name="homesoft-framework-datasource" />
+        <module name="homesoft-framework-oauth2" />
         <module name="homesoft-swagger" />
+        <module name="homesoft-demo-cloud-bus-client" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="homesoft-demo-bus-server" target="8" />
+      <module name="homesoft-framework-demo" target="8" />
+      <module name="syndata" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="framework" options="-parameters" />
+      <module name="demo-server" options="-parameters" />
+      <module name="explore" options="-parameters" />
       <module name="geek" options="-parameters" />
+      <module name="homesoft-demo-bus-server" options="-parameters" />
+      <module name="homesoft-demo-cloud-bus" options="-parameters" />
+      <module name="homesoft-demo-cloud-bus-client" options="-parameters" />
+      <module name="homesoft-framework-core" options="-parameters" />
+      <module name="homesoft-framework-datasource" options="-parameters" />
+      <module name="homesoft-framework-demo" options="-parameters" />
+      <module name="homesoft-framework-log" options="-parameters" />
+      <module name="homesoft-framework-oauth2" options="-parameters" />
+      <module name="homesoft-framework-rabbit" options="-parameters" />
       <module name="homesoft-framework-tools" options="-parameters" />
+      <module name="homesoft-framework-zipkin" options="-parameters" />
       <module name="homesoft-swagger" options="-parameters" />
       <module name="id-generator" options="-parameters" />
       <module name="spring-cloud-bus-listener" options="-parameters" />

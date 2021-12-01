@@ -1,64 +1,62 @@
 {
+  "hints": [],
   "groups": [
     {
+      "sourceType": "top.homesoft.syncData.config.CanalConfig",
       "name": "canal",
-      "type": "top.homesoft.syncData.config.CanalConfig",
-      "sourceType": "top.homesoft.syncData.config.CanalConfig"
+      "type": "top.homesoft.syncData.config.CanalConfig"
     },
     {
+      "sourceType": "top.homesoft.syncData.config.RabbitmqConfig",
       "name": "rabbitmq",
-      "type": "top.homesoft.syncData.config.RabbitmqConfig",
-      "sourceType": "top.homesoft.syncData.config.RabbitmqConfig"
+      "type": "top.homesoft.syncData.config.RabbitmqConfig"
     },
     {
+      "sourceType": "top.homesoft.syncData.config.ListenerConfig",
       "name": "rabbitmq.listener",
-      "type": "top.homesoft.syncData.config.ListenerConfig",
-      "sourceType": "top.homesoft.syncData.config.ListenerConfig"
+      "type": "top.homesoft.syncData.config.ListenerConfig"
     },
     {
+      "sourceType": "top.homesoft.syncData.config.TransferConfig",
       "name": "transfer",
-      "type": "top.homesoft.syncData.config.TransferConfig",
-      "sourceType": "top.homesoft.syncData.config.TransferConfig"
+      "type": "top.homesoft.syncData.config.TransferConfig"
     }
   ],
   "properties": [
     {
+      "sourceType": "top.homesoft.syncData.config.ListenerConfig",
       "name": "rabbitmq.listener.concurrent-consumers",
-      "type": "java.lang.Integer",
-      "sourceType": "top.homesoft.syncData.config.ListenerConfig",
-      "defaultValue": 0
+      "type": "java.lang.Integer"
     },
     {
+      "sourceType": "top.homesoft.syncData.config.ListenerConfig",
       "name": "rabbitmq.listener.exchange-name",
-      "type": "java.lang.String",
-      "sourceType": "top.homesoft.syncData.config.ListenerConfig"
+      "type": "java.lang.String"
     },
     {
-      "name": "rabbitmq.listener.prefetch-count",
-      "type": "java.lang.Integer",
       "sourceType": "top.homesoft.syncData.config.ListenerConfig",
-      "defaultValue": 0
+      "name": "rabbitmq.listener.prefetch-count",
+      "type": "java.lang.Integer"
     },
     {
+      "sourceType": "top.homesoft.syncData.config.ListenerConfig",
       "name": "rabbitmq.listener.queues",
-      "type": "java.util.List<top.homesoft.syncData.mybatis.RabbitQueueDTO>",
-      "sourceType": "top.homesoft.syncData.config.ListenerConfig"
+      "type": "java.util.List<top.homesoft.syncData.mybatis.RabbitQueueDTO>"
     },
     {
+      "sourceType": "top.homesoft.syncData.config.TransferConfig",
       "name": "transfer.black-tables",
-      "type": "java.lang.String",
-      "sourceType": "top.homesoft.syncData.config.TransferConfig"
+      "type": "java.lang.String"
     },
     {
+      "sourceType": "top.homesoft.syncData.config.TransferConfig",
       "name": "transfer.table-field",
-      "type": "java.util.Map<java.lang.String,top.homesoft.syncData.mybatis.TableTransferDTO>",
-      "sourceType": "top.homesoft.syncData.config.TransferConfig"
+      "type": "java.util.Map<java.lang.String,top.homesoft.syncData.mybatis.TableTransferDTO>"
     },
     {
+      "sourceType": "top.homesoft.syncData.config.TransferConfig",
       "name": "transfer.tables",
-      "type": "java.util.List<top.homesoft.syncData.mybatis.TableTransferDTO>",
-      "sourceType": "top.homesoft.syncData.config.TransferConfig"
+      "type": "java.util.List<top.homesoft.syncData.mybatis.TableTransferDTO>"
     }
-  ],
-  "hints": []
+  ]
 }

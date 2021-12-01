@@ -15,8 +15,7 @@
  */
 package top.homesoft.framework.swagger;
 
-import org.springblade.core.launch.constant.AppConstant;
-import org.springblade.core.launch.service.LauncherService;
+
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.core.Ordered;
 
@@ -27,18 +26,21 @@ import java.util.Properties;
  *
  * @author Chill
  */
-public class SwaggerLauncherServiceImpl implements LauncherService {
-	@Override
-	public void launcher(SpringApplicationBuilder builder, String appName, String profile) {
-		Properties props = System.getProperties();
-		if (profile.equals(AppConstant.PROD_CODE)) {
-			props.setProperty("knife4j.production", "true");
-		}
-		props.setProperty("knife4j.enable", "true");
-	}
+public class SwaggerLauncherServiceImpl
+		//implements LauncherService
+{
 
-	@Override
-	public int getOrder() {
-		return Ordered.LOWEST_PRECEDENCE;
-	}
+//	@Override
+//	public void launcher(SpringApplicationBuilder builder, String appName, String profile) {
+//		Properties props = System.getProperties();
+//		if (profile.equals(AppConstant.PROD_CODE)) {
+//			props.setProperty("knife4j.production", "true");
+//		}
+//		props.setProperty("knife4j.enable", "true");
+//	}
+//
+//	@Override
+//	public int getOrder() {
+//		return Ordered.LOWEST_PRECEDENCE;
+//	}
 }

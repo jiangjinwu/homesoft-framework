@@ -15,7 +15,9 @@
  */
 package top.homesoft.framework.swagger;
 
+import org.springframework.context.annotation.Import;
 import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
+
 
 import java.lang.annotation.*;
 
@@ -28,5 +30,6 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @EnableSwagger2WebMvc
+@Import(SwaggerAutoConfiguration.class)
 public @interface EnableSwagger {
 }
