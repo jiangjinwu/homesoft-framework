@@ -19,10 +19,7 @@
         <module>springcloud-bus</module>
         <module>homesoft-swagger</module>
         <module>homesoft-framework-tools</module>
-        <module>geek</module>
-        <module>explore</module>
         <module>homesoft-framework-log</module>
-        <module>demo-server</module>
         <module>homesoft-framework-oauth2</module>
         <module>homesoft-framework-datasource</module>
         <module>homesoft-framework-zipkin</module>

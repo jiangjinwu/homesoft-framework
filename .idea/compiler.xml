@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-cloud-bus-publisher" />
-        <module name="explore" />
         <module name="homesoft-framework-rabbit" />
         <module name="homesoft-framework-tools" />
         <module name="homesoft-framework-zipkin" />
@@ -16,7 +15,6 @@
         <module name="homesoft-framework-log" />
         <module name="spring-cloud-bus-listener" />
         <module name="homesoft-demo-cloud-bus" />
-        <module name="geek" />
         <module name="homesoft-framework-datasource" />
         <module name="homesoft-framework-oauth2" />
         <module name="homesoft-swagger" />
@@ -26,6 +24,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="demo-server" target="8" />
+      <module name="explore" target="8" />
+      <module name="geek" target="8" />
       <module name="homesoft-demo-bus-server" target="8" />
       <module name="homesoft-framework-demo" target="8" />
       <module name="syndata" target="8" />
