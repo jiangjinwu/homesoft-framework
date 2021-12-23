@@ -23,8 +23,8 @@
         <module>homesoft-framework-oauth2</module>
         <module>homesoft-framework-datasource</module>
         <module>homesoft-framework-zipkin</module>
-        <module>homesoft-demo-cloud-bus</module>
-        <module>homesoft-demo-cloud-bus-client</module>
+<!--        <module>homesoft-demo-cloud-bus</module>-->
+<!--        <module>homesoft-demo-cloud-bus-client</module>-->
         <module>homesoft-framework-rabbit</module>
         <module>homesoft-framework-starter</module>
     </modules>
