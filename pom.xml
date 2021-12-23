@@ -8,6 +8,18 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.5.2</version>
     </parent>
+    <developers>
+        <developer>
+            <name>jinwu Jiang</name>
+            <email>jiangnt@126.com</email>
+            <organization>homesoft</organization>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/jiangjinwu/homesoft-framework.git</connection>
+        <developerConnection>scm:git:https://github.com/jiangjinwu/homesoft-framework.git</developerConnection>
+        <url>https://github.com/jiangjinwu/homesoft-framework</url>
+    </scm>
 
     <groupId>top.homesoft</groupId>
     <artifactId>homesoft-framework</artifactId>
@@ -16,15 +28,13 @@
     <modules>
         <module>homesoft-framework-id-generator</module>
         <module>homesoft-framework-core</module>
-        <module>springcloud-bus</module>
+<!--        <module>springcloud-bus</module>-->
         <module>homesoft-swagger</module>
         <module>homesoft-framework-tools</module>
         <module>homesoft-framework-log</module>
         <module>homesoft-framework-oauth2</module>
         <module>homesoft-framework-datasource</module>
         <module>homesoft-framework-zipkin</module>
-<!--        <module>homesoft-demo-cloud-bus</module>-->
-<!--        <module>homesoft-demo-cloud-bus-client</module>-->
         <module>homesoft-framework-rabbit</module>
         <module>homesoft-framework-starter</module>
     </modules>
@@ -199,107 +209,98 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
-
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-zipkin</artifactId>-->
-<!--            <version>2.0.1.RELEASE</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-sleuth</artifactId>-->
-<!--            <version>2.0.1.RELEASE</version>-->
-<!--        </dependency>-->
     </dependencies>
 
 
 
-
-
-    <profiles>
-
-
+<profiles>
     <profile>
-        <id>rdc</id>
-        <repositories>
-            <repository>
-                <id>rdc-snapshots</id>
-                <url>https://packages.aliyun.com/maven/repository/2158477-snapshot-k22ZjI/</url>
-                <snapshots>
-                    <enabled>true</enabled>
-                    <updatePolicy>always</updatePolicy>
-                </snapshots>
-            </repository>
-        </repositories>
-
-        <pluginRepositories>
-            <pluginRepository>
-                <id>rdc-snapshots</id>
-                <url>https://packages.aliyun.com/maven/repository/2158477-snapshot-k22ZjI/</url>
-                <snapshots>
-                    <enabled>true</enabled>
-                    <updatePolicy>always</updatePolicy>
-                </snapshots>
-            </pluginRepository>
-        </pluginRepositories>
-
+        <id>release</id>
+        <build>
+            <plugins>
+                <!-- Source -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.2.1</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- Javadoc -->
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--                    <version>2.9.1</version>-->
+<!--                    <executions>-->
+<!--                        <execution>-->
+<!--                            <phase>package</phase>-->
+<!--                            <goals>-->
+<!--                                <goal>jar</goal>-->
+<!--                            </goals>-->
+<!--                        </execution>-->
+<!--                    </executions>-->
+<!--                </plugin>-->
+                <!-- GPG -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.5</version>
+                    <executions>
+                        <execution>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!--Compiler-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.0</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <fork>true</fork>
+                        <verbose>true</verbose>
+                        <encoding>UTF-8</encoding>
+                        <showWarnings>false</showWarnings>
+                    </configuration>
+                </plugin>
+                <!--SNAPSHOT-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-SNAPSHOT-plugin</artifactId>
+                    <version>2.5.1</version>
+                </plugin>
+            </plugins>
+        </build>
         <distributionManagement>
-            <repository>
-                <id>rdc-releases</id>
-                <name>OSS Staging Repository</name>
-                <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-            </repository>
-            <!-- 这里的id ossrh 需要和setting.xml里面server节点配置的id一致 -->
             <snapshotRepository>
-                <id>rdc-snapshots</id>
-                <name>OSS Snapshots Repository</name>
-                <url>https://packages.aliyun.com/maven/repository/2158477-snapshot-k22ZjI/</url>
+                <id>sonatype-nexus-snapshots</id>
+                <name>Sonatype Nexus Snapshots</name>
+                <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
             </snapshotRepository>
-
+            <repository>
+                <id>sonatype-nexus-staging</id>
+                <name>Nexus Release Repository</name>
+                <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+            </repository>
         </distributionManagement>
     </profile>
 
 
 
 
-
-        <profile>
-            <id>rdc-private-repo</id>
-            <repositories>
-                <repository>
-                    <id>rdc-releases</id>
-                    <url>https://repo.rdc.aliyun.com/repository/67271-release-EzbSRp/</url>
-                </repository>
-                <repository>
-                    <id>rdc-snapshots</id>
-                    <url>https://repo.rdc.aliyun.com/repository/67271-snapshot-k7FWld/</url>
-                </repository>
-            </repositories>
-
-            <distributionManagement>
-                <repository>
-                    <id>rdc-releases</id>
-                    <url>https://repo.rdc.aliyun.com/repository/67271-release-EzbSRp/</url>
-                </repository>
-                <snapshotRepository>
-                    <id>rdc-snapshots</id>
-                    <url>https://repo.rdc.aliyun.com/repository/67271-snapshot-k7FWld/</url>
-                </snapshotRepository>
-            </distributionManagement>
-        </profile>
-
     </profiles>
 
-<!--    <build>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
 
     <build>
         <finalName>homesoft-framework</finalName>
@@ -317,6 +318,53 @@
                         </dependency>
                     </dependencies>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+
+                    <configuration>
+<!--                        <aggregate>true</aggregate>-->
+                        <reportOutputDirectory>javadocs</reportOutputDirectory>
+<!--                        <destDir>security-javadoc</destDir>-->
+<!--                        <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>-->
+                        <tags>
+                            <tag>
+                                <name>Description</name>
+                                <placement>a</placement>
+                                <head>功能描述:</head>
+                            </tag>
+                        </tags>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-SNAPSHOT-plugin</artifactId>
+                        <version>2.5.3</version>
+                    </plugin>
+
             </plugins>
         </pluginManagement>
     </build>

@@ -100,6 +100,12 @@ public class ResultHolder<T>  implements Serializable {
         return this;
     }
 
+    /**
+     *
+     * @param body 包体数据
+     * @param <T> 包体类型
+     * @return 是否成功
+     */
     public static <T> ResultHolder<T> success(T body) {
         return new ResultHolder(body);
     }
@@ -108,22 +114,7 @@ public class ResultHolder<T>  implements Serializable {
         return SUCCESS_CODE.equals(this.getCode());
     }
 
-    /** @deprecated */
-    @Deprecated
-    public boolean isSuccess() {
-        return this.success();
-    }
-//
-//    public ResultHolder<T> withRedirect(String url) {
-//        if (!StringUtils.isEmpty(url)) {
-//            url = ResultUtils.replaceVariable(url, "code", this.getCode());
-//            url = ResultUtils.replaceVariable(url, "message", this.getMessage());
-//            this.redirect = url;
-//            logger.error("Result with redirect: {}", JSON.toJSONString(this));
-//        }
-//
-//        return this;
-//    }
+
 
     public <R> Optional<R> map(Function<T, R> func) {
         if (!this.success()) {

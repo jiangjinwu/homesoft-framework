@@ -23,7 +23,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     /**
      * 转换为字节数组
      * @param str
-     * @return
      */
     public static byte[] getBytes(String str){
     	if (str != null){
@@ -39,8 +38,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     
     /**
      * 转换为字节数组
-     * @param
-     * @return
      */
     public static String toString(byte[] bytes){
     	try {
@@ -84,7 +81,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	/**
 	 * 替换为手机识别的HTML，去掉样式及属性，保留回车。
 	 * @param html
-	 * @return
 	 */
 	public static String replaceMobileHtml(String html){
 		if (html == null){
@@ -109,7 +105,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
 	 * 缩略字符串（不区分中英文字符）
 	 * @param str 目标字符串
 	 * @param length 截取长度
-	 * @return
 	 */
 	public static String abbr(String str, int length) {
 		if (str == null) {
@@ -283,8 +278,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     
     /**
      * 驼峰转下划线 (暂不建议使用toUnderScoreCase)
-     * @param camelCaseName
-     * @return
+     * @param camelCaseName 输入的名称
      */
     public static String toUnderscoreName(String camelCaseName) {  
         StringBuilder result = new StringBuilder();  
@@ -303,16 +297,7 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
         return result.toString();  
     }
     
-    /**
-     * 如果不为空，则设置值
-     * @param target
-     * @param source
-     */
-    public static void setValueIfNotBlank(String target, String source) {
-		if (isNotBlank(source)){
-			target = source;
-		}
-	}
+
  
     /**
      * 转换为JS获取对象值，生成三目运算返回结果
@@ -334,8 +319,6 @@ public class StringUtils extends org.apache.commons.lang3.StringUtils {
     
     /**
      * 转换为utf-8字符串
-     * @param s
-     * @return
      */
     public static String toUtf8String(String s){ 
 	     StringBuffer sb = new StringBuffer(); 

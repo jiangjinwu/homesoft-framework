@@ -31,6 +31,7 @@ hs_err_pid*
 *.iml
 .mvn
 target/
+javadocs/
 *.versionsBackup
 mvnw
 mvnw.cmd

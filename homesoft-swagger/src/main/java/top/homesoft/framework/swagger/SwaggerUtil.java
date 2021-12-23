@@ -30,30 +30,36 @@ import java.util.List;
  */
 public class SwaggerUtil {
 
+    /**
+     * 获取包集合
+     *
+     * @param basePackages 多个包名集合
+	 * @return 返回Predicate
+     */
+    public static Predicate<RequestHandler> basePackages(final List<String> basePackages) {
+        return input -> declaringClass(input).transform(handlerPackage(basePackages)).or(true);
+    }
+
+    private static Function<Class<?>, Boolean> handlerPackage(final List<String> basePackages) {
+        return input -> {
+            // 循环判断匹配
+            for (String strPackage : basePackages) {
+                boolean isMatch = input.getPackage().getName().startsWith(strPackage);
+                if (isMatch) {
+                    return true;
+                }
+            }
+            return false;
+        };
+    }
+
 	/**
-	 * 获取包集合
 	 *
-	 * @param basePackages 多个包名集合
+	 * @param input RequestHandler
+	 * @return  declaringClass
 	 */
-	public static Predicate<RequestHandler> basePackages(final List<String> basePackages) {
-		return input -> declaringClass(input).transform(handlerPackage(basePackages)).or(true);
-	}
-
-	private static Function<Class<?>, Boolean> handlerPackage(final List<String> basePackages) {
-		return input -> {
-			// 循环判断匹配
-			for (String strPackage : basePackages) {
-				boolean isMatch = input.getPackage().getName().startsWith(strPackage);
-				if (isMatch) {
-					return true;
-				}
-			}
-			return false;
-		};
-	}
-
-	private static Optional<? extends Class<?>> declaringClass(RequestHandler input) {
-		return Optional.fromNullable(input.declaringClass());
-	}
+    private static Optional<? extends Class<?>> declaringClass(RequestHandler input) {
+        return Optional.fromNullable(input.declaringClass());
+    }
 
 }

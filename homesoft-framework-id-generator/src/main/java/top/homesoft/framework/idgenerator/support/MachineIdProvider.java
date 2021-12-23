@@ -10,8 +10,8 @@ package top.homesoft.framework.idgenerator.support;
 public interface MachineIdProvider {
     /**
      * 根据主机内网地址来获取机器ID
-     * @param innerIpAddress
-     * @return
+     * @param innerIpAddress 内网ip
+     * @return 返回机器序号
      */
     long getMachineId(String innerIpAddress);
 }

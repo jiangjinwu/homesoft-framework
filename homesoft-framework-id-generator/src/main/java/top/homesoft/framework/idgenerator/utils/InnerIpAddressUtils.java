@@ -20,9 +20,9 @@ public class InnerIpAddressUtils {
     /**
      * 获取内网IP
      *
-     * @return
-     * @throws SocketException
-     * @throws UnknownHostException
+     * @return 返回内网ip
+     * @throws SocketException 端口异常
+     * @throws UnknownHostException 未知host异常
      */
     public static String getInnerIpAddress() throws SocketException, UnknownHostException {
         InetAddress candidateAddress = null;

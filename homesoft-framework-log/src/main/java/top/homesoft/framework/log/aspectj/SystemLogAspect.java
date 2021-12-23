@@ -60,20 +60,11 @@ public class SystemLogAspect {
   /**
    * 前置通知 用于拦截Controller层记录用户的操作的开始时间
    * @param joinPoint 切点
-   * @throws InterruptedException 
    */
   @Before("controllerAspect()")
-  public void doBefore(JoinPoint joinPoint) throws InterruptedException{
+  public void doBefore(JoinPoint joinPoint){
     Date beginTime=new Date();
     beginTimeThreadLocal.set(beginTime);
-
-    //debug模式下 显式打印开始时间用于调试
-//    if (logger.isDebugEnabled()){
-//          logger.debug("开始计时: {}  URI: {}", new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS")
-//            .format(beginTime), request.getRequestURI());
-//    }
-    //读取session中的用户 
-    //currentUser.set(this.getCurrentUser(request));
   }
   
   /**
@@ -113,22 +104,16 @@ public class SystemLogAspect {
           Runtime.getRuntime().freeMemory()/1024/1024, 
           (Runtime.getRuntime().maxMemory()-Runtime.getRuntime().totalMemory()+Runtime.getRuntime().freeMemory())/1024/1024); 
     }
-
-       //1.直接执行保存操作
-        //this.logService.createLog(log);
         //2.优化:异步保存日志
         new Thread(new SaveLogThread(log, logService)).start();
         //3.再优化:通过线程池来执行日志保存
-        //threadPoolTaskExecutor.execute(new SaveLogThread(log, logService));
-      // 演示直接打印
-      //System.out.println(log);
         logThreadLocal.set(log);
   }
   
   /**
    *  异常通知 
-   * @param joinPoint
-   * @param e
+   * @param joinPoint 指定切点
+   * @param e  返回的异常
    */
   @AfterThrowing(pointcut = "controllerAspect()", throwing = "e")
   public  void doAfterThrowing(JoinPoint joinPoint, Throwable e) {
@@ -157,8 +142,7 @@ public class SystemLogAspect {
   
   /**
    * 获取session中的用户信息
-   * @param
-   * @return
+   * @return 返回当前用户id
    */
   private Long getCurrentUserId(){
 
