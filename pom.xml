@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
-        <module>id-generator</module>
+        <module>homesoft-framework-id-generator</module>
         <module>homesoft-framework-core</module>
         <module>springcloud-bus</module>
         <module>homesoft-swagger</module>
@@ -29,6 +29,7 @@
         <module>homesoft-demo-cloud-bus</module>
         <module>homesoft-demo-cloud-bus-client</module>
         <module>homesoft-framework-rabbit</module>
+        <module>homesoft-framework-starter</module>
     </modules>
 
     <properties>
@@ -215,16 +216,11 @@
 <!--            <version>2.0.1.RELEASE</version>-->
 <!--        </dependency>-->
     </dependencies>
-    <repositories>
-        <repository>
-            <id>rdc-snapshots</id>
-            <url>https://packages.aliyun.com/maven/repository/2158477-snapshot-k22ZjI/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
+
+
+
+
+
     <profiles>
 
 
@@ -269,41 +265,34 @@
     </profile>
 
 
+
+
+
         <profile>
-            <id>develop</id>
+            <id>rdc-private-repo</id>
             <repositories>
                 <repository>
-                    <id>develop</id>
-                    <url>http://nexus:8081/repository/develop/</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                    </snapshots>
+                    <id>rdc-releases</id>
+                    <url>https://repo.rdc.aliyun.com/repository/67271-release-EzbSRp/</url>
+                </repository>
+                <repository>
+                    <id>rdc-snapshots</id>
+                    <url>https://repo.rdc.aliyun.com/repository/67271-snapshot-k7FWld/</url>
                 </repository>
             </repositories>
 
-            <pluginRepositories>
-                <pluginRepository>
-                    <id>develop</id>
-                    <url>http://nexus:8081/repository/develop/</url>
-                    <snapshots>
-                        <enabled>true</enabled>
-                        <updatePolicy>always</updatePolicy>
-                    </snapshots>
-                </pluginRepository>
-            </pluginRepositories>
-
             <distributionManagement>
-                <snapshotRepository>
-                    <id>develop</id>
-                    <url>http://nexus:8081/repository/develop-snapshots/</url>
-                </snapshotRepository>
                 <repository>
-                    <id>develop</id>
-                    <url>http://nexus:8081/repository/develop-releases/</url>
+                    <id>rdc-releases</id>
+                    <url>https://repo.rdc.aliyun.com/repository/67271-release-EzbSRp/</url>
                 </repository>
+                <snapshotRepository>
+                    <id>rdc-snapshots</id>
+                    <url>https://repo.rdc.aliyun.com/repository/67271-snapshot-k7FWld/</url>
+                </snapshotRepository>
             </distributionManagement>
         </profile>
+
     </profiles>
 
 <!--    <build>-->

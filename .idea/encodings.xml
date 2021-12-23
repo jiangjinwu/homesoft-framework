@@ -12,17 +12,18 @@
     <file url="file://$PROJECT_DIR$/homesoft-framework-core/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-datasource/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-datasource/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/homesoft-framework-id-generator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/homesoft-framework-id-generator/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-log/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-log/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-oauth2/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-rabbit/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/homesoft-framework-starter/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-tools/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-zipkin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-zipkin/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-swagger/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-swagger/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/id-generator/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/id-generator/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-bus/spring-cloud-bus-listener/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-bus/spring-cloud-bus-listener/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springcloud-bus/spring-cloud-bus-publisher/src/main/java" charset="UTF-8" />

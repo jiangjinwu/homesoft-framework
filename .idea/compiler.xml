@@ -17,11 +17,12 @@
         <module name="spring-cloud-bus-listener" />
         <module name="homesoft-demo-cloud-bus" />
         <module name="geek" />
-        <module name="id-generator" />
         <module name="homesoft-framework-datasource" />
         <module name="homesoft-framework-oauth2" />
         <module name="homesoft-swagger" />
         <module name="homesoft-demo-cloud-bus-client" />
+        <module name="homesoft-framework-id-generator" />
+        <module name="homesoft-framework-starter" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -41,13 +42,14 @@
       <module name="homesoft-framework-core" options="-parameters" />
       <module name="homesoft-framework-datasource" options="-parameters" />
       <module name="homesoft-framework-demo" options="-parameters" />
+      <module name="homesoft-framework-id-generator" options="-parameters" />
       <module name="homesoft-framework-log" options="-parameters" />
       <module name="homesoft-framework-oauth2" options="-parameters" />
       <module name="homesoft-framework-rabbit" options="-parameters" />
+      <module name="homesoft-framework-starter" options="-parameters" />
       <module name="homesoft-framework-tools" options="-parameters" />
       <module name="homesoft-framework-zipkin" options="-parameters" />
       <module name="homesoft-swagger" options="-parameters" />
-      <module name="id-generator" options="-parameters" />
       <module name="spring-cloud-bus-listener" options="-parameters" />
       <module name="spring-cloud-bus-publisher" options="-parameters" />
       <module name="springcloud-bus" options="" />

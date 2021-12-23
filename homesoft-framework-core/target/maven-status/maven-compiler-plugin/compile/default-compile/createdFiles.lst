@@ -1,7 +1,9 @@
 top\homesoft\framework\http\intercepter\LogFilter.class
 top\homesoft\framework\utils\DateUtil.class
 top\homesoft\framework\http\intercepter\LogInterceptor.class
+top\homesoft\framework\intercepter\FeignInterceptor.class
 top\homesoft\framework\config\web\WebMvcConfig.class
 top\homesoft\framework\http\ResultHolder.class
+top\homesoft\framework\utils\StringUtils.class
 top\homesoft\framework\web\converter\LocalDateTimeConverter.class
 top\homesoft\framework\autoconfigure\FrameworkApplication.class
