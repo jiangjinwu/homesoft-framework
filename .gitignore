@@ -32,6 +32,8 @@ hs_err_pid*
 .mvn
 target/
 javadocs/
+pom.xml.releaseBackup
+**/.pom.xml.releaseBackup
 *.versionsBackup
 mvnw
 mvnw.cmd
