@@ -28,8 +28,8 @@
     <modules>
         <module>homesoft-framework-id-generator</module>
         <module>homesoft-framework-core</module>
-<!--        <module>springcloud-bus</module>-->
-        <module>homesoft-swagger</module>
+         <module>springcloud-bus</module>
+        <module>homesoft-framework-swagger</module>
         <module>homesoft-framework-tools</module>
         <module>homesoft-framework-log</module>
         <module>homesoft-framework-oauth2</module>
@@ -37,6 +37,14 @@
         <module>homesoft-framework-zipkin</module>
         <module>homesoft-framework-rabbit</module>
         <module>homesoft-framework-starter</module>
+        <module>homesoft-framework-wx</module>
+        <module>weixin-miniapp</module>
+        <module>graphql</module>
+        <module>homesoft-framework-feign</module>
+        <module>java-base</module>
+        <module>rabbitmq</module>
+        <module>demo-common</module>
+        <module>framework-demo/rabbit-partitioning-demo/partitioning-consumer-sample-rabbit</module>
     </modules>
 
     <properties>
@@ -88,6 +96,19 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <artifactId>homesoft-framework-id-generator</artifactId>
+                <groupId>top.homesoft</groupId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <artifactId>homesoft-framework-core</artifactId>
+                <groupId>top.homesoft</groupId>
+                <version>1.0.0-SNAPSHOT</version>
+            </dependency>
+
+
             <dependency>
                 <groupId>org.springframework.plugin</groupId>
                 <artifactId>spring-plugin-core</artifactId>
@@ -153,7 +174,7 @@
             <artifactId>spring-cloud-dependencies</artifactId>
             <version>${spring.cloud.version}</version>
             <type>pom</type>
-            <scope>import</scope>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -233,19 +254,19 @@
                     </executions>
                 </plugin>
                 <!-- Javadoc -->
-<!--                <plugin>-->
-<!--                    <groupId>org.apache.maven.plugins</groupId>-->
-<!--                    <artifactId>maven-javadoc-plugin</artifactId>-->
-<!--                    <version>2.9.1</version>-->
-<!--                    <executions>-->
-<!--                        <execution>-->
-<!--                            <phase>package</phase>-->
-<!--                            <goals>-->
-<!--                                <goal>jar</goal>-->
-<!--                            </goals>-->
-<!--                        </execution>-->
-<!--                    </executions>-->
-<!--                </plugin>-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.9.1</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
                 <!-- GPG -->
 <!--                <plugin>-->
 <!--                    <groupId>org.apache.maven.plugins</groupId>-->
@@ -275,11 +296,11 @@
                     </configuration>
                 </plugin>
                 <!--SNAPSHOT-->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-SNAPSHOT-plugin</artifactId>
-                    <version>2.5.1</version>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-SNAPSHOT-plugin</artifactId>-->
+
+<!--                </plugin>-->
             </plugins>
         </build>
         <distributionManagement>
@@ -298,12 +319,77 @@
 
 
 
+    <profile>
+        <id>rdc</id>
+        <build>
+            <plugins>
+                <!-- Source -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.2.1</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- Javadoc -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.9.1</version>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
 
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.0</version>
+                    <configuration>
+                        <source>1.8</source>
+                        <target>1.8</target>
+                        <fork>true</fork>
+                        <verbose>true</verbose>
+                        <encoding>UTF-8</encoding>
+                        <showWarnings>false</showWarnings>
+                    </configuration>
+                </plugin>
+                <!--SNAPSHOT-->
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-SNAPSHOT-plugin</artifactId>-->
+<!--                    <version>2.5.1</version>-->
+<!--                </plugin>-->
+            </plugins>
+        </build>
+        <distributionManagement>
+            <snapshotRepository>
+                <id>rdc-snapshots</id>
+                <name>rdc-snapshots</name>
+                <url>https://repo.rdc.aliyun.com/repository/67271-snapshot-k7FWld/</url>
+            </snapshotRepository>
+            <repository>
+                <id>rdc-releases</id>
+                <name>rdc-releases</name>
+                <url>https://repo.rdc.aliyun.com/repository/67271-release-EzbSRp/</url>
+            </repository>
+        </distributionManagement>
+    </profile>
     </profiles>
 
 
     <build>
-        <finalName>homesoft-framework</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>

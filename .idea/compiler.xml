@@ -8,15 +8,25 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-cloud-bus-publisher" />
+        <module name="homesoft-framework-feign" />
         <module name="homesoft-framework-rabbit" />
         <module name="homesoft-framework-tools" />
         <module name="homesoft-framework-zipkin" />
         <module name="homesoft-framework-core" />
+        <module name="homesoft-framework-swagger" />
         <module name="homesoft-framework-log" />
+        <module name="rabbitmq" />
+        <module name="partitioning-producer-sample-rabbit" />
         <module name="spring-cloud-bus-listener" />
         <module name="homesoft-demo-cloud-bus" />
+        <module name="weixin-miniapp" />
+        <module name="cloud-bus-base" />
+        <module name="systemlog" />
         <module name="homesoft-framework-datasource" />
+        <module name="demo-common" />
         <module name="homesoft-framework-oauth2" />
+        <module name="partitioning-consumer-sample-rabbit" />
+        <module name="graphql" />
         <module name="homesoft-swagger" />
         <module name="homesoft-demo-cloud-bus-client" />
         <module name="homesoft-framework-id-generator" />
@@ -34,27 +44,40 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cloud-bus-base" options="-parameters" />
+      <module name="demo-common" options="-parameters" />
       <module name="demo-server" options="-parameters" />
       <module name="explore" options="-parameters" />
       <module name="geek" options="-parameters" />
+      <module name="graphql" options="-parameters" />
+      <module name="homesoft-demo" options="" />
       <module name="homesoft-demo-bus-server" options="-parameters" />
       <module name="homesoft-demo-cloud-bus" options="-parameters" />
       <module name="homesoft-demo-cloud-bus-client" options="-parameters" />
       <module name="homesoft-framework-core" options="-parameters" />
       <module name="homesoft-framework-datasource" options="-parameters" />
       <module name="homesoft-framework-demo" options="-parameters" />
+      <module name="homesoft-framework-feign" options="-parameters" />
       <module name="homesoft-framework-id-generator" options="-parameters" />
       <module name="homesoft-framework-log" options="-parameters" />
       <module name="homesoft-framework-oauth2" options="-parameters" />
       <module name="homesoft-framework-rabbit" options="-parameters" />
       <module name="homesoft-framework-starter" options="-parameters" />
+      <module name="homesoft-framework-swagger" options="-parameters" />
       <module name="homesoft-framework-tools" options="-parameters" />
+      <module name="homesoft-framework-wx" options="" />
       <module name="homesoft-framework-zipkin" options="-parameters" />
       <module name="homesoft-swagger" options="-parameters" />
+      <module name="partitioning-consumer-sample-rabbit" options="-parameters" />
+      <module name="partitioning-producer-sample-rabbit" options="-parameters" />
+      <module name="rabbit-partitioning-demo" options="" />
+      <module name="rabbitmq" options="-parameters" />
       <module name="spring-cloud-bus-listener" options="-parameters" />
       <module name="spring-cloud-bus-publisher" options="-parameters" />
       <module name="springcloud-bus" options="" />
       <module name="syndata" options="-parameters" />
+      <module name="systemlog" options="-parameters" />
+      <module name="weixin-miniapp" options="-parameters" />
     </option>
   </component>
 </project>

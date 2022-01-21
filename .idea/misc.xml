@@ -7,6 +7,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/springcloud-bus/spring-cloud-bus-listener/pom.xml" />
         <option value="$PROJECT_DIR$/syndata/pom.xml" />
+        <option value="$PROJECT_DIR$/framework-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/framework-demo/rabbitmq/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -5,14 +5,27 @@ import org.springframework.stereotype.Repository;
 import top.homesoft.framework.log.domain.systemlog.entity.SystemLogPO;
 import top.homesoft.framework.log.domain.systemlog.repository.SystemLogRepository;
 import top.homesoft.framework.log.domain.systemlog.repository.mapper.SystemLogMapper;
+import top.homesoft.framework.log.domain.systemlog.service.SystemLogService;
+
+import java.util.Objects;
 
 @Repository
 public class SystemLogRepositoryImpl implements SystemLogRepository {
     @Autowired
     SystemLogMapper systemLogMapper;
+
+	@Autowired
+	SystemLogService systemLogService;
     @Override
     public Boolean saveLog(SystemLogPO systemLogPO) {
-        return systemLogMapper.insert(systemLogPO)>0;
+//		if(Objects.nonNull(systemLogPO)){
+//			if( Objects.nonNull(systemLogPO.getLogId())){
+//				return systemLogMapper.updateById(systemLogPO)>0;
+//			}else{
+//				return systemLogMapper.insert(systemLogPO)>0;
+//			}
+//		}
+		return systemLogService.saveOrUpdate(systemLogPO);
     }
 
     @Override

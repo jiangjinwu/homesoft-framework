@@ -20,9 +20,6 @@ import java.util.Map;
 @Slf4j
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurationSupport {
-
-
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         Map<String, String> resourceMap = new HashMap<>(16);

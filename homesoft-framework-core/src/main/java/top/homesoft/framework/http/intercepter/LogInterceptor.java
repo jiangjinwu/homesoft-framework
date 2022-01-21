@@ -15,27 +15,17 @@ import java.util.UUID;
 public class LogInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Object debug = request.getParameter("debug");
-        //if(logger.isDebugEnabled() ||  ObjectUtil.isNotEmpty(debug)) {
-            MDC.put("x-request-id", UUID.randomUUID().toString());
-            logger.info(MDC.get("x-request-id"));
-       // }
+		MDC.put("x-request-id", UUID.randomUUID().toString());
+        logger.info(MDC.get("x-request-id"));
         return true;
     }
 
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
 
-
-
     }
 
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
-
         MDC.put("xx", UUID.randomUUID().toString() + "begin");
 
-        response.addHeader("xx", MDC.get("xx"));
-        response.setHeader("xx", MDC.get("xx"));
-        response.getHeader("xx");
     }
-
-
 }

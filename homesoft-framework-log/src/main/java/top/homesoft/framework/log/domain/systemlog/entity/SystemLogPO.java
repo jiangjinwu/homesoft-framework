@@ -21,13 +21,17 @@ public class SystemLogPO {
     private String requestUri;      //URI
     private String method;      //请求方式
     private String params;      //提交参数
+	private String reqParams;      //提交参数
     private String exception;      //异常
     private Date operateDate;      //开始时间
     private Long timeout;      //结束时间
     private Long userId;      //用户ID
+	private Date rspTime;      //响应时间
+	private String reqId;
 
-
-
+	private  String reqHeader;
+	private  String rspMsg;
+	private  String errMsg;
 
 
     @Override

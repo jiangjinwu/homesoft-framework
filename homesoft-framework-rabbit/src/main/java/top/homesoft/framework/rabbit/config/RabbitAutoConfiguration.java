@@ -17,7 +17,8 @@ import org.springframework.context.annotation.Configuration;
 @ConditionalOnClass({RabbitTemplate.class})
 @ConditionalOnProperty(
         prefix = "spring.rabbitmq",
-        matchIfMissing = true
+        matchIfMissing = true,
+        value = "host"
 )
 public class RabbitAutoConfiguration {
 

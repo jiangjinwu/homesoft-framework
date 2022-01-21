@@ -35,7 +35,7 @@
             <fastjson.version>1.2.76</fastjson.version>
             <druid.version>1.2.4</druid.version>
             <springfox.version>3.0.0</springfox.version>
-            <swagger.version>1.5.20</swagger.version>
+
 
             <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
             <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>

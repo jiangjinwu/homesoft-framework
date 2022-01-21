@@ -4,6 +4,7 @@ E:\sample\study\homesoft-framework\homesoft-framework-core\src\main\java\top\hom
 E:\sample\study\homesoft-framework\homesoft-framework-core\src\main\java\top\homesoft\framework\web\converter\LocalDateTimeConverter.java
 E:\sample\study\homesoft-framework\homesoft-framework-core\src\main\java\top\homesoft\framework\autoconfigure\FrameworkApplication.java
 E:\sample\study\homesoft-framework\homesoft-framework-core\src\main\java\top\homesoft\framework\intercepter\FeignInterceptor.java
+E:\sample\study\homesoft-framework\homesoft-framework-core\src\main\java\top\homesoft\framework\autoconfigure\FrameworkAutoConfiguration.java
 E:\sample\study\homesoft-framework\homesoft-framework-core\src\main\java\top\homesoft\framework\http\intercepter\LogInterceptor.java
 E:\sample\study\homesoft-framework\homesoft-framework-core\src\main\java\top\homesoft\framework\http\ResultHolder.java
 E:\sample\study\homesoft-framework\homesoft-framework-core\src\main\java\top\homesoft\framework\utils\StringUtils.java

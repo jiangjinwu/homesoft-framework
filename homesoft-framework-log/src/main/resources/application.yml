@@ -1,3 +1,7 @@
 logging:
   level:
     top.homesoft.framework.log.**: DEBUG
+
+hs:
+  header:
+    userIdKey: hs-user-id
