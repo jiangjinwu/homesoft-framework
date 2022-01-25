@@ -24,6 +24,7 @@
     <file url="file://$PROJECT_DIR$/homesoft-framework-id-generator/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-log/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-log/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/homesoft-framework-mq/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-oauth2/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-rabbit/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/homesoft-framework-starter/src/main/java" charset="UTF-8" />

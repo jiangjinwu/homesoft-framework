@@ -39,12 +39,9 @@
         <module>homesoft-framework-starter</module>
         <module>homesoft-framework-wx</module>
         <module>weixin-miniapp</module>
-        <module>graphql</module>
         <module>homesoft-framework-feign</module>
-        <module>java-base</module>
-        <module>rabbitmq</module>
-        <module>demo-common</module>
         <module>framework-demo/rabbit-partitioning-demo/partitioning-consumer-sample-rabbit</module>
+        <module>homesoft-framework-mq</module>
     </modules>
 
     <properties>
