@@ -13,6 +13,8 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import org.redisson.api.RedissonClient;
 import org.redisson.codec.JsonJacksonCodec;
+import org.springframework.amqp.support.converter.MessagingMessageConverter;
+import org.springframework.boot.autoconfigure.amqp.SimpleRabbitListenerContainerFactoryConfigurer;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -97,4 +99,13 @@ public class RabbitTemplateConfig
         PlayBackMessageRepository playBackMessageRepository = new DefaultPlayBackMessageRepository<>(redissonClient,jsonJacksonCodec);
         return playBackMessageRepository;
     }
+
+//    @Bean
+//    @ConditionalOnMissingBean
+//    MessagingMessageConverter messagingMessageConverter(){
+//
+////        SimpleRabbitListenerContainerFactoryConfigurer simpleRabbitListenerContainerFactoryConfigurer;
+////        simpleRabbitListenerContainerFactoryConfigurer.
+//        return new MessagingMessageConverter();
+//    }
 }

@@ -10,7 +10,7 @@ public interface PlayBackMessageRepository {
 
     BaseMessage put(BaseMessage message);
 
-    BaseMessage get(String messageId);
+    BaseMessage get(String bizCode,String messageId);
 
-    BaseMessage delete(String messageId);
+    BaseMessage delete(String bizCode,String messageId);
 }
