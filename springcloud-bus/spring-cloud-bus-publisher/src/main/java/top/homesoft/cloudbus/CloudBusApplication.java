@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.bus.jackson.RemoteApplicationEventScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Configuration;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 
 import java.net.SocketException;
 import java.net.UnknownHostException;
@@ -13,7 +13,6 @@ import java.net.UnknownHostException;
 @SpringBootApplication
 @Configuration
 @RemoteApplicationEventScan(basePackageClasses = CacheEvictEvent.class)
-@EnableSwagger2
 @EnableDiscoveryClient
 public class CloudBusApplication {
 

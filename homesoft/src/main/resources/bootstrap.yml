@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: commission-new-service
+  zipkin:
+    sender:
+      type: web
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://10.13.3.225:3306/commission?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&rewriteBatchedStatements=true
+    username: root
+    password: Xa612I77Kvi
+    druid:
+      filters: stat,wall,stat,slf4j,default
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: true
+        login-username: test
+        login-password: 123456
+      filter:
+        slf4j:
+          enabled: true
+          statementCreateAfterLogEnabled: false
+          statementExecutableSqlLogEnable: true
+          statementLogEnabled: true
+
+
+  logging:
+    level:
+      druid:
+        sql:
+          statement: debug
+logging:
+  level:
+    druid:
+      sql:
+        statement: debug
+#  rabbitmq:
+#    listener:
+#      type: direct
+#      direct:
+#        acknowledge-mode: manual # 配置 Consumer 手动提交
+
+

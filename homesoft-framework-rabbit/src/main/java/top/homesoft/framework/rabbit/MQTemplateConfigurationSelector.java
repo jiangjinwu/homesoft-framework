@@ -2,7 +2,9 @@ package top.homesoft.framework.rabbit;
 
 import org.springframework.context.annotation.ImportSelector;
 import org.springframework.core.type.AnnotationMetadata;
+import top.homesoft.framework.rabbit.controller.PlayBackController;
 import top.homesoft.framework.rabbit.support.DefaultAbstractMQProcessTemplate;
+import top.homesoft.framework.rabbit.support.PlayBackMessageService;
 import top.homesoft.framework.rabbit.support.RabbitTemplateConfig;
 
 import java.util.ArrayList;
@@ -14,6 +16,8 @@ public class MQTemplateConfigurationSelector implements ImportSelector {
         List<String> imports = new ArrayList<>();
         imports.add(RabbitTemplateConfig.class.getName());
         imports.add(DefaultAbstractMQProcessTemplate.class.getName());
+        imports.add(PlayBackMessageService.class.getName());
+        imports.add(PlayBackController.class.getName());
         return imports.toArray(new String[0]);
     }
 }

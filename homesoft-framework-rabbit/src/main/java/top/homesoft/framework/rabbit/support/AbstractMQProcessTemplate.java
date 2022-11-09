@@ -16,7 +16,7 @@ public abstract class AbstractMQProcessTemplate<T extends BaseMessage> {
       MessagingMessageConverter messagingMessageConverter;
 
     protected AbstractMQProcessTemplate( ) {
-        this.messagingMessageConverter = messagingMessageConverter;
+        this.messagingMessageConverter = new MessagingMessageConverter();
     }
 
     public void execute(Message amqpMessage, Consumer<BaseMessage> filter) {
@@ -37,6 +37,10 @@ public abstract class AbstractMQProcessTemplate<T extends BaseMessage> {
         } catch (Exception e) {
             handleNotProcessMesssage(baseMessage);
         }
+    }
+
+   public T parse(Message amqpMessage){
+        return (T)messagingMessageConverter.fromMessage(amqpMessage);
     }
 
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<kmodule xmlns="http://www.drools.org/xsd/kmodule">
+    <kbase name="helloWorldBase">
+        <ksession name="helloWorldSession"/>
+    </kbase>
+
+
+    <kbase name="personBase" packages="top.homesoft.drools.person">
+        <ksession name="personSession"/>
+    </kbase>
+
+
+    <kbase name="HouseOfDoomKB" packages="top.homesoft.drools.backwardchaining">
+        <ksession name="HouseOfDoomKS"/>
+    </kbase>
+</kmodule>

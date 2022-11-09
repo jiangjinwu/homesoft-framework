@@ -1,0 +1,21 @@
+package top.homesoft.drools.person;
+
+import top.homesoft.drools.domain.person.Person;
+import top.homesoft.drools.domain.person.People;
+
+global java.util.List myList
+
+rule "man"
+    when
+        $p:People(sex == 1 , drlType == "people")
+    then
+       System.out.println($p.getName() + "是一个男孩");
+end
+
+
+rule "girlAndPerson"
+    when
+        $p:People(sex == 0 , drlType == "people") and $p1:Person(age > 10)
+    then
+        System.out.println($p.getName() + "是一个女孩,年龄：" + $p1.getAge());
+end

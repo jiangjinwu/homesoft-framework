@@ -1,4 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
   top.homesoft.cloudbus.controller.CloudBusController,\
-  top.homesoft.cloudbus.CacheEvictListener,\
-  top.homesoft.cloudbus.CloudBusApplication
+  top.homesoft.cloudbus.CloudBusApplication,\
+  top.homesoft.cloudbus.CacheEvictListener

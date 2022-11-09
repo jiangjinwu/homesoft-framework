@@ -1,0 +1,12 @@
+server:
+  port: 8000
+mybatis-plus:
+  mapper-locations:
+    classpath*:mapper/*.xml
+  #type-aliases-package: com.usi.hly.pay.entity
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.16.0.120/homesoft-demo?serverTimezone=Asia/Shanghai&characterEncoding=utf-8&characterSetResults=utf8&useSSL=true
+    username: root
+    password: devjiang

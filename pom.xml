@@ -42,6 +42,14 @@
         <module>homesoft-framework-feign</module>
         <module>framework-demo/rabbit-partitioning-demo/partitioning-consumer-sample-rabbit</module>
         <module>homesoft-framework-mq</module>
+
+        <module>drools</module>
+        <module>framework-demo/payfacade</module>
+        <module>homesoft-gateway</module>
+        <module>graphviz</module>
+        <module>framework-demo/untitled</module>
+        <module>framework-demo/untitled1</module>
+        <module>homesoft</module>
     </modules>
 
     <properties>

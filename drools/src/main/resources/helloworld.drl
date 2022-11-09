@@ -1,0 +1,10 @@
+package helloworld;
+
+
+global java.util.List myList
+rule "HelloWorld"
+    when
+        eval(true)
+    then
+        System.out.println("HelloWorld");
+end

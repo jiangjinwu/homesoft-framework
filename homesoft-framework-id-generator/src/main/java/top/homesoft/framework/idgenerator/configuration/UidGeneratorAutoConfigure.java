@@ -4,6 +4,9 @@ import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.IdUtil;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.curator.framework.CuratorFramework;
+import org.apache.curator.framework.CuratorFrameworkFactory;
+import org.apache.curator.retry.ExponentialBackoffRetry;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
@@ -14,6 +17,7 @@ import org.springframework.data.redis.connection.RedisPassword;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import top.homesoft.framework.idgenerator.support.RedisMachineIdProvider;
+import top.homesoft.framework.idgenerator.support.ZookeeperMachineIdProvider;
 import top.homesoft.framework.idgenerator.utils.InnerIpAddressUtils;
 
 import java.net.SocketException;
@@ -48,17 +52,17 @@ public class UidGeneratorAutoConfigure {
         return new RedisMachineIdProvider(redisTemplate);
     }
 
-//    @Bean
-//    @ConditionalOnProperty(prefix = "uid.generator.config", value = "strategy", havingValue = "zookeeper")
-//    public ZookeeperMachineIdProvider machineZookeeperIdProvider(UidGeneratorProperties uidGeneratorProperties) {
-//        CuratorFramework curatorFramework = CuratorFrameworkFactory.builder()
-//                .connectString(uidGeneratorProperties.getZookeeper().getConnectString())
-//                .retryPolicy(new ExponentialBackoffRetry(uidGeneratorProperties.getZookeeper().getBaseSleepTimeMs(),
-//                        uidGeneratorProperties.getZookeeper().getMaxRetries()))
-//                .namespace(uidGeneratorProperties.getZookeeper().getNamespace())
-//                .build();
-//        return new ZookeeperMachineIdProvider(curatorFramework);
-//    }
+    @Bean
+    @ConditionalOnProperty(prefix = "uid.generator.config", value = "strategy", havingValue = "zookeeper")
+    public ZookeeperMachineIdProvider machineZookeeperIdProvider(UidGeneratorProperties uidGeneratorProperties) {
+        CuratorFramework curatorFramework = CuratorFrameworkFactory.builder()
+                .connectString(uidGeneratorProperties.getZookeeper().getConnectString())
+                .retryPolicy(new ExponentialBackoffRetry(uidGeneratorProperties.getZookeeper().getBaseSleepTimeMs(),
+                        uidGeneratorProperties.getZookeeper().getMaxRetries()))
+                .namespace(uidGeneratorProperties.getZookeeper().getNamespace())
+                .build();
+        return new ZookeeperMachineIdProvider(curatorFramework);
+    }
 
     @Bean
     @ConditionalOnBean(RedisMachineIdProvider.class)
@@ -72,16 +76,16 @@ public class UidGeneratorAutoConfigure {
         return  snowflake;
     }
 
-//    @Bean
-//    @ConditionalOnBean(ZookeeperMachineIdProvider.class)
-//    public IdWorker idWorkerZookeeper(ZookeeperMachineIdProvider machineIdProvider) throws SocketException, UnknownHostException {
-//        log.info("===============初始化基于zookeeper的id生成器===============");
-//        String innerIpAddress = InnerIpAddressUtils.getInnerIpAddress();
-//        long machineId = machineIdProvider.getMachineId(innerIpAddress);
-//        long workerId = machineId % MACHINE_MASK;
-//        long dataCenterId = machineId >> 5;
-//        return new IdWorker(workerId, dataCenterId, MAX_SEQUENCE);
-//    }
+    @Bean
+    @ConditionalOnBean(ZookeeperMachineIdProvider.class)
+    public Snowflake idWorkerZookeeper(ZookeeperMachineIdProvider machineIdProvider) throws SocketException, UnknownHostException {
+        logger.info("===============初始化基于zookeeper的id生成器===============");
+        String innerIpAddress = InnerIpAddressUtils.getInnerIpAddress();
+        long machineId = machineIdProvider.getMachineId(innerIpAddress);
+        long workerId = machineId % MACHINE_MASK;
+        long dataCenterId = machineId >> 5;
+        return   IdUtil.createSnowflake(workerId, dataCenterId);
+    }
 
 
     private RedisStandaloneConfiguration getStandaloneConfig(RedisProperties redisProperties) {

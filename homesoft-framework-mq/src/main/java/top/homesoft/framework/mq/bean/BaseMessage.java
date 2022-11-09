@@ -10,5 +10,7 @@ public class BaseMessage  implements Serializable {
     String id;
     String bizCode;
     BaseMessageType messageType = BaseMessageType.ORIGINAL;
+    Integer playbackTimes=0;
+    boolean error;
     MessageProperties messageProperties;
 }

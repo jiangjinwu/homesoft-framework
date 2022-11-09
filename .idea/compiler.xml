@@ -7,13 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="demo-user" />
+        <module name="homesoft-commission" />
+        <module name="rapid-generator" />
         <module name="homesoft-framework-feign" />
         <module name="homesoft-framework-zipkin" />
         <module name="homesoft-framework-core" />
+        <module name="storeaudit" />
         <module name="homesoft-framework-swagger" />
         <module name="homesoft-framework-log" />
         <module name="partitioning-producer-sample-rabbit" />
+        <module name="eventbus-greenrobot" />
         <module name="spring-cloud-bus-listener" />
+        <module name="homesoft-gateway" />
         <module name="homesoft-demo-cloud-bus" />
         <module name="weixin-miniapp" />
         <module name="homesoft-framework-datasource" />
@@ -23,10 +29,15 @@
         <module name="homesoft-demo-cloud-bus-client" />
         <module name="homesoft-framework-starter" />
         <module name="spring-cloud-bus-publisher" />
+        <module name="untitled" />
+        <module name="data-structure" />
         <module name="homesoft-framework-rabbit" />
         <module name="homesoft-framework-mq" />
-        <module name="homesoft-framework-tools" />
+        <module name="drools" />
+        <module name="payfacade" />
         <module name="rabbitmq" />
+        <module name="untitled1" />
+        <module name="eventbus" />
         <module name="cloud-bus-base" />
         <module name="systemlog" />
         <module name="homesoft-framework-oauth2" />
@@ -38,6 +49,7 @@
       <module name="demo-server" target="8" />
       <module name="explore" target="8" />
       <module name="geek" target="8" />
+      <module name="graphviz" target="8" />
       <module name="homesoft-demo-bus-server" target="8" />
       <module name="homesoft-framework-demo" target="8" />
       <module name="syndata" target="8" />
@@ -46,11 +58,18 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cloud-bus-base" options="-parameters" />
+      <module name="data-structure" options="-parameters" />
       <module name="demo-common" options="-parameters" />
       <module name="demo-server" options="-parameters" />
+      <module name="demo-user" options="-parameters" />
+      <module name="drools" options="-parameters" />
+      <module name="eventbus" options="-parameters" />
+      <module name="eventbus-greenrobot" options="-parameters" />
       <module name="explore" options="-parameters" />
       <module name="geek" options="-parameters" />
       <module name="graphql" options="-parameters" />
+      <module name="graphviz" options="-parameters" />
+      <module name="homesoft-commission" options="-parameters" />
       <module name="homesoft-demo" options="" />
       <module name="homesoft-demo-bus-server" options="-parameters" />
       <module name="homesoft-demo-cloud-bus" options="-parameters" />
@@ -69,16 +88,22 @@
       <module name="homesoft-framework-tools" options="-parameters" />
       <module name="homesoft-framework-wx" options="" />
       <module name="homesoft-framework-zipkin" options="-parameters" />
+      <module name="homesoft-gateway" options="-parameters" />
       <module name="homesoft-swagger" options="-parameters" />
       <module name="partitioning-consumer-sample-rabbit" options="-parameters" />
       <module name="partitioning-producer-sample-rabbit" options="-parameters" />
+      <module name="payfacade" options="-parameters" />
       <module name="rabbit-partitioning-demo" options="" />
       <module name="rabbitmq" options="-parameters" />
       <module name="spring-cloud-bus-listener" options="-parameters" />
       <module name="spring-cloud-bus-publisher" options="-parameters" />
       <module name="springcloud-bus" options="" />
+      <module name="statemachine" options="-parameters" />
+      <module name="storeaudit" options="-parameters" />
       <module name="syndata" options="-parameters" />
       <module name="systemlog" options="-parameters" />
+      <module name="untitled" options="-parameters" />
+      <module name="untitled1" options="-parameters" />
       <module name="weixin-miniapp" options="-parameters" />
     </option>
   </component>

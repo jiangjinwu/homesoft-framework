@@ -13,11 +13,16 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import org.redisson.api.RedissonClient;
 import org.redisson.codec.JsonJacksonCodec;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.MessagingMessageConverter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.amqp.SimpleRabbitListenerContainerFactoryConfigurer;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -26,28 +31,28 @@ import java.time.format.DateTimeFormatter;
 public class RabbitTemplateConfig
   // implements RabbitTemplate.ConfirmCallback,RabbitTemplate.ReturnCallback
 {
-   /* @Autowired
+   @Autowired
     private RabbitTemplate rabbitTemplate;
 
     @PostConstruct
     public void init(){
-        rabbitTemplate.setConfirmCallback(this);
+        //rabbitTemplate.setConfirmCallback(this);
     }
 
-    @Override
-    public void confirm(CorrelationData correlationData, boolean ack, String cause) {
-        System.out.println("消息唯一标识："+correlationData);
-        System.out.println("确认结果："+ack);
-        System.out.println("失败原因："+cause);
-    }
-
-    @Override
-    public void returnedMessage(Message message, int i, String s, String s1, String s2) {
-        System.out.println("message："+message);
-        System.out.println("s："+s);
-        System.out.println("s1："+s1);
-        System.out.println("s1："+s2);
-    }*/
+//    @Override
+//    public void confirm(CorrelationData correlationData, boolean ack, String cause) {
+//        System.out.println("消息唯一标识："+correlationData);
+//        System.out.println("确认结果："+ack);
+//        System.out.println("失败原因："+cause);
+//    }
+//
+//    @Override
+//    public void returnedMessage(Message message, int i, String s, String s1, String s2) {
+//        System.out.println("message："+message);
+//        System.out.println("s："+s);
+//        System.out.println("s1："+s1);
+//        System.out.println("s1："+s2);
+//    }
 
     @Bean
     @ConditionalOnMissingBean

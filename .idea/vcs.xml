@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/framework-demo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/homesoft-framework-tools/rapid-generator" vcs="Git" />
   </component>
 </project>

@@ -9,6 +9,7 @@ import org.redisson.codec.JsonJacksonCodec;
 import top.homesoft.framework.mq.bean.BaseMessage;
 
 import java.util.Objects;
+import java.util.Optional;
 
 public class DefaultPlayBackMessageRepository<T extends BaseMessage> implements PlayBackMessageRepository {
 
@@ -37,14 +38,14 @@ public class DefaultPlayBackMessageRepository<T extends BaseMessage> implements 
     }
 
     @Override
-    public BaseMessage get(String bizCode,String messageId) {
-        RMapCache<String,BaseMessage> mapCache= messageRMapCacheRMap.get(bizCode);
-        return mapCache.get(messageId);
+    public Optional<BaseMessage> get(String bizCode,String messageId) {
+        RMapCache<String,BaseMessage> mapCache= getCacheMap(bizCode);
+        return Optional.ofNullable(mapCache.get(messageId));
     }
 
     @Override
     public BaseMessage delete(String bizCode,String messageId) {
-        RMapCache<String,BaseMessage> mapCache= messageRMapCacheRMap.get(bizCode);
+        RMapCache<String,BaseMessage> mapCache= getCacheMap(bizCode);
         return mapCache.remove(messageId);
     }
 

@@ -23,8 +23,8 @@ public class UidGeneratorProperties {
     @NestedConfigurationProperty
     private RedisProperties redis;
 
-//    @NestedConfigurationProperty
-//    private ZookeeperProperties zookeeper;
+    @NestedConfigurationProperty
+    private ZookeeperProperties zookeeper;
 
 
     public enum StrategyEnum {
