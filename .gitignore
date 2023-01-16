@@ -31,6 +31,7 @@ hs_err_pid*
 *.iml
 .mvn
 target/
+/target/
 javadocs/
 pom.xml.releaseBackup
 **/.pom.xml.releaseBackup
@@ -41,4 +42,5 @@ mvnw.cmd
 elk.json
 *.gz
 logs/
+/gen-srouce/
 
