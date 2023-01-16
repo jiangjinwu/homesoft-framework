@@ -39,7 +39,7 @@ import ${grouppackage}.${basepackage}.service.${className}Service;
 @Api(tags = "${classNameLower}管理")
 @RestController
 @Validated
-@RequestMapping("/${namespace}/${classNameLower}/admin")
+@RequestMapping("/${aggregate}/${classNameLower}/admin")
 @Slf4j
 public class ${className}AdminController {
 

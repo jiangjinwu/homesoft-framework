@@ -2,7 +2,7 @@
 <#assign className = table.className>
 <#assign classNameLower = className?uncap_first>
 <#assign shortName = table.shortName>
-package ${basepackage}.feign.${namespace};
+package ${basepackage}.feign.${aggregate};
 
 import java.util.*;
 
@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
-import ${basepackage}.${namespace}.service.${className}Service;
+import ${basepackage}.${aggregate}.service.${className}Service;
 
 /**
  * @version 1.0
- * @author 
+ * @author
  */
 @RestController
 @FeignClient("${basepackage}-service")
-@RequestMapping("/${namespace}/${classNameLower}")
+@RequestMapping("/${aggregate}/${classNameLower}")
 public interface ${className}FeignService {
-    
+
     @Autowired
     private ${className}Service ${classNameLower}Service;
 
@@ -41,7 +41,7 @@ public interface ${className}FeignService {
 
     @PutMapping(value = "/{id}")
     ResultHolder update(@PathVariable(Columns.ID) Long id);
-    
+
 
     @DeleteMapping(value = "/{id}")
     ResultHolder delete(@PathVariable(Columns.ID) Long id);

@@ -17,9 +17,8 @@ import lombok.experimental.Accessors;
  * ${table.tableAlias}
  *
  * @author jjw
- * @version 1.0
- *
-
+ * @version 1.0,
+ *@data {DATE}
  */
 
 @Data

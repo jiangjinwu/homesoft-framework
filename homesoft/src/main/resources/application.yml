@@ -21,13 +21,14 @@ spring:
         reset-enable: true
         login-username: test
         login-password: 123456
-#      filter:
-#        slf4j:
-#          enabled: true
-#          resultSetLogEnabled: false
-#          statementCreateAfterLogEnabled: false
-#          statementExecutableSqlLogEnable: true
-#          statementLogEnabled: true
+      filter:
+        slf4j:
+          enabled: true
+          resultSetLogEnabled: false
+          statementCreateAfterLogEnabled: false
+          statementPrepareAfterLogEnabled: false
+          statementExecutableSqlLogEnable: true
+          statementLogEnabled: true
   redis:
     redisson:
       pingConnectionInterval: 1000
@@ -55,12 +56,17 @@ spring:
           statement: debug
 logging:
   level:
+    console: debug
     druid:
       sql:
         statement: debug
     com.jubaozan.service.commission.**: DEBUG
     com.jubaozan.service.commission.domain.**.mapper.**: DEBUG
-  #config: classpath:logback-spring.xml
+    org.redisson.**: WARN
+  pattern:
+      level: "%5p [${spring.zipkin.service.name:${spring.application.name:-}},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-},%X{x-c3-sjid:-} %X{x-c3-agentid:-} %X{x-c3-clientip:-} %X{x-c3-request-uri:-}]"
+
+  config: classpath:logback-spring.xml
 
 
 mybatis-plus:

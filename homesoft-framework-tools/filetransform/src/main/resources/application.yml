@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: hotevent-service
+  undertow:
+    buffer-size: 1024
+    direct-buffers: true
+  profiles:
+    active: dev
+  resources:
+    static-locations: ${res.src}
+  servlet:
+    multipart:
+      enabled: true #是否启用http上传处理
+      max-request-size: 100MB #最大请求文件的大小
+      max-file-size: 20MB #设置单个文件最大长度
+      file-size-threshold: 20MB #当文件达到多少时进行磁盘写入
+  redis:
+    redisson:
+      pingConnectionInterval: 1000
+      password: 123456
+      address: redis://172.16.0.100:6379
+    database: 0
+    host: 172.16.0.100
+    port: 6379
+    password: 123456
+
+#当前应用相关的配置请在app下添加
+app:
+  resource-img-path: ${app.resource-img-path.val}
+  upload-img-path: ${app.upload-img-path.val}

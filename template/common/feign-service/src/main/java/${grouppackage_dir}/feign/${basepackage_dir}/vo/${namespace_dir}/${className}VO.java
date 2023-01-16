@@ -2,7 +2,7 @@
 <#include "/java_copyright.include">
 <#assign className = table.className>
 <#assign classNameLower = className?uncap_first>
-package ${basepackage}.${namespace}.model;
+package ${basepackage}.${aggregate}.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

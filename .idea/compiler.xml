@@ -37,6 +37,7 @@
         <module name="payfacade" />
         <module name="rabbitmq" />
         <module name="untitled1" />
+        <module name="filetransform" />
         <module name="eventbus" />
         <module name="cloud-bus-base" />
         <module name="systemlog" />
@@ -52,6 +53,8 @@
       <module name="graphviz" target="8" />
       <module name="homesoft-demo-bus-server" target="8" />
       <module name="homesoft-framework-demo" target="8" />
+      <module name="homesoft-framework-tools" target="8" />
+      <module name="sharding-sphere" target="8" />
       <module name="syndata" target="8" />
     </bytecodeTargetLevel>
   </component>
@@ -66,6 +69,7 @@
       <module name="eventbus" options="-parameters" />
       <module name="eventbus-greenrobot" options="-parameters" />
       <module name="explore" options="-parameters" />
+      <module name="filetransform" options="-parameters" />
       <module name="geek" options="-parameters" />
       <module name="graphql" options="-parameters" />
       <module name="graphviz" options="-parameters" />
@@ -95,6 +99,7 @@
       <module name="payfacade" options="-parameters" />
       <module name="rabbit-partitioning-demo" options="" />
       <module name="rabbitmq" options="-parameters" />
+      <module name="sharding-sphere" options="-parameters" />
       <module name="spring-cloud-bus-listener" options="-parameters" />
       <module name="spring-cloud-bus-publisher" options="-parameters" />
       <module name="springcloud-bus" options="" />

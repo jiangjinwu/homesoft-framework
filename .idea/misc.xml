@@ -15,6 +15,7 @@
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/framework-demo/graphviz/pom.xml" />
+        <option value="$PROJECT_DIR$/homesoft-framework-tools/pom.xml" />
       </set>
     </option>
   </component>
