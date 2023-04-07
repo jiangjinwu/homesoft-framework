@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/framework-demo/pom.xml" />
         <option value="$PROJECT_DIR$/framework-demo/rabbitmq/pom.xml" />
         <option value="$PROJECT_DIR$/homesoft-framework-tools/rapid-generator/pom.xml" />
+        <option value="$PROJECT_DIR$/homesoft-framework-tools/sqltool/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

@@ -31,43 +31,50 @@
       "name": "uid.generator.config.redis.database",
       "type": "java.lang.Integer",
       "description": "连接哪个数据库，默认为15",
-      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties"
+      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties",
+      "defaultValue": 15
     },
     {
       "name": "uid.generator.config.redis.host",
       "type": "java.lang.String",
       "description": "主机，默认为localhost",
-      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties"
+      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties",
+      "defaultValue": "localhost"
     },
     {
       "name": "uid.generator.config.redis.lettuce.pool.max-active",
       "type": "java.lang.Integer",
       "description": "Maximum number of connections that can be allocated by the pool at a given time. Use a negative value for no limit.",
-      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties$Pool"
+      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties$Pool",
+      "defaultValue": 8
     },
     {
       "name": "uid.generator.config.redis.lettuce.pool.max-idle",
       "type": "java.lang.Integer",
       "description": "Maximum number of \"idle\" connections in the pool. Use a negative value to indicate an unlimited number of idle connections.",
-      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties$Pool"
+      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties$Pool",
+      "defaultValue": 8
     },
     {
       "name": "uid.generator.config.redis.lettuce.pool.max-wait",
       "type": "java.time.Duration",
       "description": "Maximum amount of time a connection allocation should block before throwing an exception when the pool is exhausted. Use a negative value to block indefinitely.",
-      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties$Pool"
+      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties$Pool",
+      "defaultValue": "-1ms"
     },
     {
       "name": "uid.generator.config.redis.lettuce.pool.min-idle",
       "type": "java.lang.Integer",
       "description": "Target for the minimum number of idle connections to maintain in the pool. This setting only has an effect if it is positive.",
-      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties$Pool"
+      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties$Pool",
+      "defaultValue": 0
     },
     {
       "name": "uid.generator.config.redis.lettuce.shutdown-timeout",
       "type": "java.time.Duration",
       "description": "Shutdown timeout.",
-      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties$Lettuce"
+      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties$Lettuce",
+      "defaultValue": "100ms"
     },
     {
       "name": "uid.generator.config.redis.password",
@@ -79,7 +86,8 @@
       "name": "uid.generator.config.redis.port",
       "type": "java.lang.Integer",
       "description": "端口，默认为6379",
-      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties"
+      "sourceType": "top.homesoft.framework.idgenerator.configuration.RedisProperties",
+      "defaultValue": 6379
     },
     {
       "name": "uid.generator.config.redis.timeout",
@@ -97,7 +105,8 @@
       "name": "uid.generator.config.zookeeper.base-sleep-time-ms",
       "type": "java.lang.Integer",
       "description": "基本休眠时间（单位：毫秒），默认为3000毫秒",
-      "sourceType": "top.homesoft.framework.idgenerator.configuration.ZookeeperProperties"
+      "sourceType": "top.homesoft.framework.idgenerator.configuration.ZookeeperProperties",
+      "defaultValue": 3000
     },
     {
       "name": "uid.generator.config.zookeeper.connect-string",
@@ -109,13 +118,15 @@
       "name": "uid.generator.config.zookeeper.max-retries",
       "type": "java.lang.Integer",
       "description": "最大重试次数，默认为3次",
-      "sourceType": "top.homesoft.framework.idgenerator.configuration.ZookeeperProperties"
+      "sourceType": "top.homesoft.framework.idgenerator.configuration.ZookeeperProperties",
+      "defaultValue": 3
     },
     {
       "name": "uid.generator.config.zookeeper.namespace",
       "type": "java.lang.String",
       "description": "命名空间，默认为IdWorker",
-      "sourceType": "top.homesoft.framework.idgenerator.configuration.ZookeeperProperties"
+      "sourceType": "top.homesoft.framework.idgenerator.configuration.ZookeeperProperties",
+      "defaultValue": "IdWorker"
     }
   ],
   "hints": []

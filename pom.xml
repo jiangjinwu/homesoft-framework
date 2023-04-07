@@ -40,18 +40,15 @@
         <module>homesoft-framework-wx</module>
         <module>weixin-miniapp</module>
         <module>homesoft-framework-feign</module>
-        <module>framework-demo/rabbit-partitioning-demo/partitioning-consumer-sample-rabbit</module>
         <module>homesoft-framework-mq</module>
-
         <module>drools</module>
-        <module>framework-demo/payfacade</module>
         <module>homesoft-gateway</module>
-        <module>graphviz</module>
-        <module>framework-demo/untitled</module>
-        <module>framework-demo/untitled1</module>
         <module>homesoft</module>
-        <module>sharding-sphere</module>
         <module>homesoft-framework-tools/filetransform</module>
+        <module>homesoft-framework-dependencies</module>
+        <module>homesoft-framework-build</module>
+
+
     </modules>
 
     <properties>
@@ -78,11 +75,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
 
-
-
-
-
-
         <redisson.version>3.14.0</redisson.version>
         <framework.version>1.0.1-SNAPSHOT</framework.version>
         <jackson.version>2.11.1</jackson.version>
@@ -92,9 +84,6 @@
         <fastjson.version>1.2.76</fastjson.version>
         <druid.version>1.2.4</druid.version>
         <springfox.version>3.0.0</springfox.version>
-
-
-        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.3.RELEASE</spring-cloud-alibaba.version>
         <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
         <spring-statemachine.version>2.2.1.RELEASE</spring-statemachine.version>
@@ -152,16 +141,7 @@
     </dependencyManagement>
     <dependencies>
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
@@ -268,7 +248,7 @@
                     </executions>
                 </plugin>
                 <!-- Javadoc -->
-                <plugin>
+<!--                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>2.9.1</version>
@@ -280,7 +260,7 @@
                             </goals>
                         </execution>
                     </executions>
-                </plugin>
+                </plugin>-->
                 <!-- GPG -->
 <!--                <plugin>-->
 <!--                    <groupId>org.apache.maven.plugins</groupId>-->
@@ -333,74 +313,62 @@
 
 
 
-    <profile>
-        <id>rdc</id>
-        <build>
-            <plugins>
-                <!-- Source -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>2.2.1</version>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>jar-no-fork</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <!-- Javadoc -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>2.9.1</version>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
+                                                                                                                                                                                                                                                                                            <profile>
+                                                                                                                                                                                                                                                                                                <id>rdc</id>
+                                                                                                                                                                                                                                                                                                <build>
+                                                                                                                                                                                                                                                                                                    <plugins>
+                                                                                                                                                                                                                                                                                                        <!-- Source -->
+                                                                                                                                                                                                                                                                                                        <plugin>
+                                                                                                                                                                                                                                                                                                            <groupId>org.apache.maven.plugins</groupId>
+                                                                                                                                                                                                                                                                                                            <artifactId>maven-source-plugin</artifactId>
+                                                                                                                                                                                                                                                                                                            <version>2.2.1</version>
+                                                                                                                                                                                                                                                                                                            <executions>
+                                                                                                                                                                                                                                                                                                                <execution>
+                                                                                                                                                                                                                                                                                                                    <phase>package</phase>
+                                                                                                                                                                                                                                                                                                                    <goals>
+                                                                                                                                                                                                                                                                                                                        <goal>jar-no-fork</goal>
+                                                                                                                                                                                                                                                                                                                    </goals>
+                                                                                                                                                                                                                                                                                                                </execution>
+                                                                                                                                                                                                                                                                                                            </executions>
+                                                                                                                                                                                                                                                                                                        </plugin>
 
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.0</version>
-                    <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                        <fork>true</fork>
-                        <verbose>true</verbose>
-                        <encoding>UTF-8</encoding>
-                        <showWarnings>false</showWarnings>
-                    </configuration>
-                </plugin>
-                <!--SNAPSHOT-->
-<!--                <plugin>-->
-<!--                    <groupId>org.apache.maven.plugins</groupId>-->
-<!--                    <artifactId>maven-SNAPSHOT-plugin</artifactId>-->
-<!--                    <version>2.5.1</version>-->
-<!--                </plugin>-->
-            </plugins>
-        </build>
-        <distributionManagement>
-            <snapshotRepository>
-                <id>rdc-snapshots</id>
-                <name>rdc-snapshots</name>
-                <url>https://repo.rdc.aliyun.com/repository/67271-snapshot-k7FWld/</url>
-            </snapshotRepository>
-            <repository>
-                <id>rdc-releases</id>
-                <name>rdc-releases</name>
-                <url>https://repo.rdc.aliyun.com/repository/67271-release-EzbSRp/</url>
-            </repository>
-        </distributionManagement>
-    </profile>
+
+                                                                                                                                                                                                                                                                                                        <plugin>
+                                                                                                                                                                                                                                                                                                            <groupId>org.apache.maven.plugins</groupId>
+                                                                                                                                                                                                                                                                                                            <artifactId>maven-compiler-plugin</artifactId>
+                                                                                                                                                                                                                                                                                                            <version>3.0</version>
+                                                                                                                                                                                                                                                                                                            <configuration>
+                                                                                                                                                                                                                                                                                                                <source>1.8</source>
+                                                                                                                                                                                                                                                                                                                <target>1.8</target>
+                                                                                                                                                                                                                                                                                                                <fork>true</fork>
+                                                                                                                                                                                                                                                                                                                <verbose>true</verbose>
+                                                                                                                                                                                                                                                                                                                <encoding>UTF-8</encoding>
+                                                                                                                                                                                                                                                                                                                <showWarnings>false</showWarnings>
+                                                                                                                                                                                                                                                                                                            </configuration>
+                                                                                                                                                                                                                                                                                                        </plugin>
+                                                                                                                                                                                                                                                                                                        <!--SNAPSHOT-->
+                                                                                                                                                                                                                                                                                        <!--                <plugin>-->
+                                                                                                                                                                                                                                                                                        <!--                    <groupId>org.apache.maven.plugins</groupId>-->
+                                                                                                                                                                                                                                                                                        <!--                    <artifactId>maven-SNAPSHOT-plugin</artifactId>-->
+                                                                                                                                                                                                                                                                                        <!--                    <version>2.5.1</version>-->
+                                                                                                                                                                                                                                                                                        <!--                </plugin>-->
+                                                                                                                                                                                                                                                                                                    </plugins>
+                                                                                                                                                                                                                                                                                                </build>
+                                                                                                                                                                                                                                                                                                <distributionManagement>
+                                                                                                                                                                                                                                                                                                    <snapshotRepository>
+                                                                                                                                                                                                                                                                                                        <id>rdc-snapshots</id>
+                                                                                                                                                                                                                                                                                                        <name>rdc-snapshots</name>
+                                                                                                                                                                                                                                                                                                        <url>https://repo.rdc.aliyun.com/repository/67271-snapshot-k7FWld/</url>
+                                                                                                                                                                                                                                                                                                    </snapshotRepository>
+                                                                                                                                                                                                                                                                                                    <repository>
+                                                                                                                                                                                                                                                                                                        <id>rdc-releases</id>
+                                                                                                                                                                                                                                                                                                        <name>rdc-releases</name>
+                                                                                                                                                                                                                                                                                                        <url>https://repo.rdc.aliyun.com/repository/67271-release-EzbSRp/</url>
+                                                                                                                                                                                                                                                                                                    </repository>
+                                                                                                                                                                                                                                                                                                </distributionManagement>
+                                                                                                                                                                                                                                                                                            </profile>
     </profiles>
+
 
 
     <build>

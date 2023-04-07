@@ -2,7 +2,10 @@ E:\sample\study\homesoft-framework\homesoft-framework-id-generator\src\main\java
 E:\sample\study\homesoft-framework\homesoft-framework-id-generator\src\main\java\top\homesoft\framework\idgenerator\SimpleIdGenerator.java
 E:\sample\study\homesoft-framework\homesoft-framework-id-generator\src\main\java\top\homesoft\framework\idgenerator\support\RedisMachineIdProvider.java
 E:\sample\study\homesoft-framework\homesoft-framework-id-generator\src\main\java\top\homesoft\framework\idgenerator\configuration\RedisProperties.java
+E:\sample\study\homesoft-framework\homesoft-framework-id-generator\src\main\java\top\homesoft\framework\idgenerator\configuration\ZookeeperProperties.java
 E:\sample\study\homesoft-framework\homesoft-framework-id-generator\src\main\java\top\homesoft\framework\idgenerator\utils\InnerIpAddressUtils.java
 E:\sample\study\homesoft-framework\homesoft-framework-id-generator\src\main\java\top\homesoft\framework\idgenerator\support\MachineIdProvider.java
+E:\sample\study\homesoft-framework\homesoft-framework-id-generator\src\main\java\top\homesoft\framework\idgenerator\autoincrement\RedisAutoIncrementIdGenerator.java
 E:\sample\study\homesoft-framework\homesoft-framework-id-generator\src\main\java\top\homesoft\framework\idgenerator\configuration\UidGeneratorAutoConfigure.java
 E:\sample\study\homesoft-framework\homesoft-framework-id-generator\src\main\java\top\homesoft\framework\idgenerator\IDGenServiceApplication.java
+E:\sample\study\homesoft-framework\homesoft-framework-id-generator\src\main\java\top\homesoft\framework\idgenerator\support\ZookeeperMachineIdProvider.java

@@ -1,8 +1,8 @@
 /*
  * 创 建 人: jjw
- * 创建时间: ${date}
+ * 创建时间: ${.now}?string("yyyyMMdd")
  */
-
+<#include "/java_copyright.include">
 <#assign className=table.className>
     <#assign classNameLower=className?uncap_first>
     <#assign shortName=table.shortName>
@@ -29,8 +29,11 @@ import ${grouppackage}.dao.${basepackage}.domain.${className}DO;
 @Service
 public class ${className}ServiceImpl extends ServiceImpl<${className}Mapper,${className}DO>implements ${className}Service{
 
+    /** isEntityTable = false**/
+
     @Override
-    public IPage<${className}DO>search(${className}SearchRequest request){
+    public IPage<${className}DO>search(${className}SearchDTO request){
+    <#if isEntityTable=='true'>
         QueryWrapper<${className}DO> queryWrapper=new QueryWrapper<>();
         LambdaQueryWrapper<${className}DO>lambdaQueryWrapper=queryWrapper.lambda();
         if(StringUtils.isNotEmpty(request.getSearchKey())){
@@ -44,6 +47,10 @@ public class ${className}ServiceImpl extends ServiceImpl<${className}Mapper,${cl
             queryWrapper.orderBy(Objects.nonNull(request.getSort()),request.getSort().isAsc(),request.getSort().getColumns());
         }
         return baseMapper.selectPage(new Page<>(request.getPageNo(),request.getPageSize()),lambdaQueryWrapper);
+    </#if>
+    <#if isEntityTable=='false'>
+        return baseMapper.search(new Page<>(request.getPageNo(),request.getPageSize(),request);
+    </#if>
     }
 
     public ${className}DO getByUserId(UserId userId){

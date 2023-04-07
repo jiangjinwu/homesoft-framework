@@ -10,7 +10,7 @@ public class SpliteFile {
 
     public static void main(String[] args) {
 
-        splitFileByLine("C:\\Users\\user\\Desktop\\t_user_import.sql", "C:\\Users\\user\\Desktop\\user_import", 1000);
+        splitFileByLine("C:\\Users\\user\\Desktop\\t_bank_branch.sql", "C:\\Users\\user\\Desktop\\sqloutput", 3000);
     }
 
     public static int splitFileByLine(String sourceFilePath, String targetDirectoryPath, int rows) {

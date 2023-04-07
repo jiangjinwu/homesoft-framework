@@ -7,55 +7,66 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="demo-user" />
         <module name="homesoft-commission" />
         <module name="rapid-generator" />
         <module name="homesoft-framework-feign" />
         <module name="homesoft-framework-zipkin" />
         <module name="homesoft-framework-core" />
-        <module name="storeaudit" />
         <module name="homesoft-framework-swagger" />
         <module name="homesoft-framework-log" />
-        <module name="partitioning-producer-sample-rabbit" />
-        <module name="eventbus-greenrobot" />
+        <module name="sqltool" />
         <module name="spring-cloud-bus-listener" />
         <module name="homesoft-gateway" />
         <module name="homesoft-demo-cloud-bus" />
         <module name="weixin-miniapp" />
         <module name="homesoft-framework-datasource" />
-        <module name="demo-common" />
-        <module name="graphql" />
+        <module name="homesoft-framework-starter-web" />
+        <module name="homesoft-framework-cloud-starter-nacos" />
         <module name="homesoft-swagger" />
         <module name="homesoft-demo-cloud-bus-client" />
-        <module name="homesoft-framework-starter" />
         <module name="spring-cloud-bus-publisher" />
-        <module name="untitled" />
-        <module name="data-structure" />
         <module name="homesoft-framework-rabbit" />
+        <module name="homesoft-framework-dependencies" />
         <module name="homesoft-framework-mq" />
         <module name="drools" />
-        <module name="payfacade" />
-        <module name="rabbitmq" />
-        <module name="untitled1" />
         <module name="filetransform" />
-        <module name="eventbus" />
-        <module name="cloud-bus-base" />
-        <module name="systemlog" />
+        <module name="homesoft-framework-starter-parent" />
         <module name="homesoft-framework-oauth2" />
-        <module name="partitioning-consumer-sample-rabbit" />
+        <module name="homesoft-framework-build" />
         <module name="homesoft-framework-id-generator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="cloud-bus-base" target="8" />
+      <module name="data-structure" target="8" />
+      <module name="demo-common" target="8" />
       <module name="demo-server" target="8" />
+      <module name="demo-user" target="8" />
+      <module name="eventbus" target="8" />
+      <module name="eventbus-greenrobot" target="8" />
       <module name="explore" target="8" />
       <module name="geek" target="8" />
+      <module name="graphql" target="8" />
       <module name="graphviz" target="8" />
+      <module name="homesoft-demo" target="8" />
       <module name="homesoft-demo-bus-server" target="8" />
       <module name="homesoft-framework-demo" target="8" />
-      <module name="homesoft-framework-tools" target="8" />
+      <module name="homesoft-framework-dependencies" target="1.8" />
+      <module name="homesoft-framework-tools" target="1.8" />
+      <module name="otter" target="8" />
+      <module name="partitioning-consumer-sample-rabbit" target="8" />
+      <module name="partitioning-producer-sample-rabbit" target="8" />
+      <module name="payfacade" target="8" />
+      <module name="rabbit-partitioning-demo" target="8" />
+      <module name="rabbitmq" target="8" />
       <module name="sharding-sphere" target="8" />
+      <module name="statemachine" target="8" />
+      <module name="storeaudit" target="8" />
       <module name="syndata" target="8" />
+      <module name="systemlog" target="8" />
+      <module name="untitled" target="8" />
+      <module name="untitled1" target="8" />
+      <module name="untitled2" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -78,22 +89,29 @@
       <module name="homesoft-demo-bus-server" options="-parameters" />
       <module name="homesoft-demo-cloud-bus" options="-parameters" />
       <module name="homesoft-demo-cloud-bus-client" options="-parameters" />
+      <module name="homesoft-framework" options="" />
+      <module name="homesoft-framework-build" options="-parameters" />
+      <module name="homesoft-framework-cloud-starter-nacos" options="-parameters" />
       <module name="homesoft-framework-core" options="-parameters" />
       <module name="homesoft-framework-datasource" options="-parameters" />
       <module name="homesoft-framework-demo" options="-parameters" />
+      <module name="homesoft-framework-dependencies" options="-parameters" />
       <module name="homesoft-framework-feign" options="-parameters" />
       <module name="homesoft-framework-id-generator" options="-parameters" />
       <module name="homesoft-framework-log" options="-parameters" />
       <module name="homesoft-framework-mq" options="-parameters" />
       <module name="homesoft-framework-oauth2" options="-parameters" />
       <module name="homesoft-framework-rabbit" options="-parameters" />
-      <module name="homesoft-framework-starter" options="-parameters" />
+      <module name="homesoft-framework-starter" options="" />
+      <module name="homesoft-framework-starter-parent" options="-parameters" />
+      <module name="homesoft-framework-starter-web" options="-parameters" />
       <module name="homesoft-framework-swagger" options="-parameters" />
-      <module name="homesoft-framework-tools" options="-parameters" />
+      <module name="homesoft-framework-tools" options="" />
       <module name="homesoft-framework-wx" options="" />
       <module name="homesoft-framework-zipkin" options="-parameters" />
       <module name="homesoft-gateway" options="-parameters" />
       <module name="homesoft-swagger" options="-parameters" />
+      <module name="otter" options="" />
       <module name="partitioning-consumer-sample-rabbit" options="-parameters" />
       <module name="partitioning-producer-sample-rabbit" options="-parameters" />
       <module name="payfacade" options="-parameters" />
@@ -103,12 +121,14 @@
       <module name="spring-cloud-bus-listener" options="-parameters" />
       <module name="spring-cloud-bus-publisher" options="-parameters" />
       <module name="springcloud-bus" options="" />
+      <module name="sqltool" options="-parameters" />
       <module name="statemachine" options="-parameters" />
       <module name="storeaudit" options="-parameters" />
       <module name="syndata" options="-parameters" />
       <module name="systemlog" options="-parameters" />
       <module name="untitled" options="-parameters" />
       <module name="untitled1" options="-parameters" />
+      <module name="untitled2" options="-parameters" />
       <module name="weixin-miniapp" options="-parameters" />
     </option>
   </component>

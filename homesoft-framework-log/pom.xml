@@ -28,7 +28,11 @@
             <groupId>top.homesoft</groupId>
             <artifactId>homesoft-framework-core</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>top.homesoft</groupId>
+            <artifactId>homesoft-framework-zipkin</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>io.swagger</groupId>

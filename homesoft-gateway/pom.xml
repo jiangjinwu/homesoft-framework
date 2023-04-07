@@ -2,18 +2,113 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>homesoft-framework</artifactId>
-        <groupId>top.homesoft</groupId>
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
+
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>top.homesoft</groupId>
+    <version>1.0.0-SNAPSHOT</version>
     <artifactId>homesoft-gateway</artifactId>
-
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-    </properties>
+        <java.version>1.8</java.version>
+        <maven.plugin.version>3.8.0</maven.plugin.version>
+        <swagger.version>2.10.5</swagger.version>
+        <swagger.models.version>1.6.2</swagger.models.version>
+        <knife4j.version>2.0.8</knife4j.version>
+        <mybatis.plus.version>3.4.3.1</mybatis.plus.version>
+        <mybatis.plus.generator.version>3.4.1</mybatis.plus.generator.version>
+        <protostuff.version>1.6.0</protostuff.version>
+        <disruptor.version>3.4.2</disruptor.version>
+        <spring.boot.admin.version>2.3.1</spring.boot.admin.version>
+        <mica.auto.version>1.2.5</mica.auto.version>
 
+        <spring.plugin.version>2.0.0.RELEASE</spring.plugin.version>
+
+        <spring.platform.version>Cairo-SR8</spring.platform.version>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+
+
+
+
+
+
+        <redisson.version>3.14.0</redisson.version>
+        <framework.version>1.0.1-SNAPSHOT</framework.version>
+        <jackson.version>2.11.1</jackson.version>
+        <hutool.version>4.6.3</hutool.version>
+        <mybatis-plus.version>3.4.1</mybatis-plus.version>
+        <mybatis-spring.version>2.1.4</mybatis-spring.version>
+        <fastjson.version>1.2.76</fastjson.version>
+        <druid.version>1.2.4</druid.version>
+        <springfox.version>3.0.0</springfox.version>
+    </properties>
+    <dependencies>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-gateway</artifactId>
+        <version>2.2.5.RELEASE</version>
+    </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>2.2.5.RELEASE</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-gateway-mvc</artifactId>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
+            <scope>provided</scope>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-gateway-webflux</artifactId>-->
+<!--            <version>3.0.3</version>-->
+<!--        </dependency>-->
+
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>2.2.3.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>2.2.3.RELEASE</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+        </dependency>
+
+       <!-- redis 使用-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>2.8.1</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.6.3</version>
+        </dependency>
+    </dependencies>
 </project>

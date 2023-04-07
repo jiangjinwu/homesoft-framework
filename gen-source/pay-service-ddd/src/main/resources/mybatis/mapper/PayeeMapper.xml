@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jubaozan.pay.dao.mapper.PayeeMapper">
+
+    <resultMap id="BaseResultMap" type="pay.model.Payee">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="storeId" column="store_id" jdbcType="BIGINT"/>
+            <result property="payeeStoreId" column="payee_store_id" jdbcType="BIGINT"/>
+            <result property="payeeMerchantId" column="payee_merchant_id" jdbcType="BIGINT"/>
+            <result property="tenantId" column="tenant_id" jdbcType="VARCHAR"/>
+            <result property="createAt" column="create_at" jdbcType="TIMESTAMP"/>
+            <result property="createBy" column="create_by" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <!-- 用于select查询公用抽取的列 -->
+    <sql id="Base_Column_List">
+        m.id,m.store_id,m.payee_store_id,m.payee_merchant_id,m.tenant_id,m.create_at,m.create_by
+    </sql>
+
+    <select id="getById" parameterType="int" resultMap="BaseResultMap">
+        select
+            <include refid="Base_Column_List" />
+        from
+            t_payee m
+        where
+            id = #{id}
+    </select>
+
+    <select id="countBy" resultType="int">
+        select count(*)
+        from t_payee
+        where 1=1
+          <if test="query != null and query.id != null">
+            and id = #{ query.id, jdbcType=INTEGER }
+          </if>
+          <if test="query != null and query.storeId != null">
+            and store_id = #{ query.storeId, jdbcType=BIGINT }
+          </if>
+          <if test="query != null and query.payeeStoreId != null">
+            and payee_store_id = #{ query.payeeStoreId, jdbcType=BIGINT }
+          </if>
+          <if test="query != null and query.payeeMerchantId != null">
+            and payee_merchant_id = #{ query.payeeMerchantId, jdbcType=BIGINT }
+          </if>
+          <if test="query != null and query.tenantId != null">
+            and tenant_id = #{ query.tenantId, jdbcType=VARCHAR }
+          </if>
+          <if test="query != null and query.createAt != null">
+            and create_at = #{ query.createAt, jdbcType=TIMESTAMP }
+          </if>
+          <if test="query != null and query.createBy != null">
+            and create_by = #{ query.createBy, jdbcType=BIGINT }
+          </if>
+    </select>
+
+    <select id="search" resultMap="BaseResultMap">
+        select
+            <include refid="Base_Column_List" />
+        from t_payee m
+        where 1=1
+            <if test="query != null and query.id != null">
+              and id = #{ query.id, jdbcType=INTEGER }
+            </if>
+            <if test="query != null and query.storeId != null">
+              and store_id = #{ query.storeId, jdbcType=BIGINT }
+            </if>
+            <if test="query != null and query.payeeStoreId != null">
+              and payee_store_id = #{ query.payeeStoreId, jdbcType=BIGINT }
+            </if>
+            <if test="query != null and query.payeeMerchantId != null">
+              and payee_merchant_id = #{ query.payeeMerchantId, jdbcType=BIGINT }
+            </if>
+            <if test="query != null and query.tenantId != null">
+              and tenant_id = #{ query.tenantId, jdbcType=VARCHAR }
+            </if>
+            <if test="query != null and query.createAt != null">
+              and create_at = #{ query.createAt, jdbcType=TIMESTAMP }
+            </if>
+            <if test="query != null and query.createBy != null">
+              and create_by = #{ query.createBy, jdbcType=BIGINT }
+            </if>
+
+    </select>
+
+    <update id="update" parameterType="pay.model.Payee">
+        update t_payee
+        <set>
+            <if test="storeId != null">
+              store_id = #{storeId, jdbcType=BIGINT },
+            </if>
+            <if test="payeeStoreId != null">
+              payee_store_id = #{payeeStoreId, jdbcType=BIGINT },
+            </if>
+            <if test="payeeMerchantId != null">
+              payee_merchant_id = #{payeeMerchantId, jdbcType=BIGINT },
+            </if>
+            <if test="tenantId != null">
+              tenant_id = #{tenantId, jdbcType=VARCHAR },
+            </if>
+            <if test="createAt != null">
+              create_at = #{createAt, jdbcType=TIMESTAMP },
+            </if>
+            <if test="createBy != null">
+              create_by = #{createBy, jdbcType=BIGINT },
+            </if>
+        </set>
+        where
+            id = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="int">
+        delete from t_payee
+        where
+            id = #{id}
+    </delete>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id"
+        parameterType="pay.model.Payee">
+        insert into t_payee
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="storeId != null">
+                store_id,
+            </if>
+            <if test="payeeStoreId != null">
+                payee_store_id,
+            </if>
+            <if test="payeeMerchantId != null">
+                payee_merchant_id,
+            </if>
+            <if test="tenantId != null">
+                tenant_id,
+            </if>
+            <if test="createAt != null">
+                create_at,
+            </if>
+            <if test="createBy != null">
+                create_by,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id, jdbcType=INTEGER},
+            </if>
+            <if test="storeId != null">
+                #{storeId, jdbcType=BIGINT},
+            </if>
+            <if test="payeeStoreId != null">
+                #{payeeStoreId, jdbcType=BIGINT},
+            </if>
+            <if test="payeeMerchantId != null">
+                #{payeeMerchantId, jdbcType=BIGINT},
+            </if>
+            <if test="tenantId != null">
+                #{tenantId, jdbcType=VARCHAR},
+            </if>
+            <if test="createAt != null">
+                #{createAt, jdbcType=TIMESTAMP},
+            </if>
+            <if test="createBy != null">
+                #{createBy, jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+
+</mapper>

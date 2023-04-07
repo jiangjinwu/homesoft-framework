@@ -1,4 +1,4 @@
-<#include "/java_copyright.include">
+
 <#assign className = table.className>
 <#assign classNameLower = className?uncap_first>
 <#assign shortName = table.shortName>
@@ -25,19 +25,19 @@ import ${basepackage}.dao.mysql.${className}Mapper;
 
 /**
  * @version 1.0
- * @author 
+ * @author
  * 单元测试 ${table.tableAlias}: ${className}Mapper
  */
 @ContextConfiguration("classpath:generated/testSpringContext.xml")
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional // 事务必须要Junit看得见才能回滚
 public class Test${className}Mapper {
-    
+
     private Log logger = LogFactory.getLog(this.getClass());
-    
+
     @Autowired
     private ${className}Mapper ${classNameLower}Mapper;
-    
+
     @Before
     public void setUp(){
         Assert.notNull(${classNameLower}Mapper, "${classNameLower}Mapper 不能为 null");
@@ -48,7 +48,7 @@ public class Test${className}Mapper {
         ${classNameLower}Mapper = null;
         // 此处可以做一些清理操作
     }
-    
+
     @Test
     public  void testListBy(){
         logger.debug("开始测试 ${classNameLower}Mapper.listPage(params)");

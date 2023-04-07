@@ -1,0 +1,35 @@
+﻿spring:
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  application:
+    name: gateway-service
+  cloud:
+    nacos:
+      config:
+        server-addr: nacos:8848
+        group: dev
+        file-extension: yml
+        shared-configs:
+          - data-id: application.yml
+            group: ${spring.cloud.nacos.config.group}
+            refresh: true
+      discovery:
+        server-addr: ${spring.cloud.nacos.config.server-addr}
+        group: ${spring.cloud.nacos.config.group}
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+
+c3:
+  auth:
+    jwt-secret: lk98yvg3gfd
+  document:
+
+    enabled: true

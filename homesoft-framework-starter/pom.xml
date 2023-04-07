@@ -10,7 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>homesoft-framework-starter</artifactId>
-
+   <packaging>pom</packaging>
+    <modules>
+        <module>homesoft-framework-starter-web</module>
+        <module>homesoft-framework-starter-parent</module>
+        <module>homesoft-framework-cloud-starter-nacos</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -57,10 +62,19 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>

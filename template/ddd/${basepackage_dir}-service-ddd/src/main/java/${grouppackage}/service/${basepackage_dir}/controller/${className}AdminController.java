@@ -27,8 +27,6 @@ import com.jubaozan.c3.framework.constants.Constants;
 
 
 
-import ${grouppackage}.${basepackage}.mvc.controller.base.ControllerBase;
-import ${grouppackage}.${basepackage}.util.common.StringNumberUtil;
 import ${grouppackage}.${basepackage}.model.${className};
 import ${grouppackage}.${basepackage}.service.${className}Service;
 

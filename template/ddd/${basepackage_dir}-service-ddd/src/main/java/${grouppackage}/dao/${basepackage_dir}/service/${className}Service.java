@@ -16,7 +16,7 @@ import  ${grouppackage}.dao.${basepackage}.domain.${className}DO;
  */
 public interface ${className}Service extends IService<${className}DO> {
 
-    IPage<${className}DO> search(${className}SearchRequest search);
+     IPage<${className}DO> search(${className}SearchDTO search);
 
      ${className}DO getByUserId(UserId userId);
 
